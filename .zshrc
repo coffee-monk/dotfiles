@@ -251,6 +251,7 @@ alias ps="pipenv shell"
 # MISCELLANEOUS
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+alias rs="redshift -P -O "
 
 #FUNCTIONS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
