@@ -296,10 +296,13 @@ map <silent> <C-z> :Files<CR>
 map <silent> <C-p> :Files<CR>
 " map <C-Bslash> :Files<CR>
 " map <leader><Bslash> :Files<CR>
-call arpeggio#map('n','','0','zx',':Files<CR>')
+call arpeggio#map('n','','0','op',':Files<CR>')
 
 "Ack Search
-call arpeggio#map('n','','0','qw',':Ack ')
+call arpeggio#map('n','','0','zx',':Ack ')
+
+"Rg Search
+call arpeggio#map('n','','0','qw',':Rg ')
 
 "Tag List of Variables
 nmap <leader>z :TlistToggle<CR><C-h>
