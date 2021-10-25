@@ -4,12 +4,18 @@
     "scss",
     "markdown",
     "javascript",
+    "jsx",
+    "javascriptreact",
     "graphql",
     "html",
     "yaml",
     "json",
-    "python"
+    "python",
+    "ejs"
   ],
+
+  "prettier.arrowParens": "avoid",
+  "prettier.semi": false,
 
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
