@@ -1,8 +1,8 @@
-"VIMRC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"VIMRC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 filetype off
 
-"CONFIG FILES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"CONFIG FILES off >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/coc.vim
@@ -11,7 +11,7 @@ source $HOME/.config/nvim/colors/colorscheme-config.vim
 
 "Colorschemes: mjc/gruvbox/night-owl/sonokai/palenight/nord
 
-"VIM BASIC SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"VIM BASIC SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 filetype plugin indent on
@@ -51,7 +51,7 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 autocmd BufRead,BufNewFile *.ejs setfiletype html
 
-"PLUGIN SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"PLUGIN SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/nvim/vimwiki/vimwiki-HTML'}]
 
@@ -262,7 +262,7 @@ EOF
 "vim-shfmt - autoformat on save
 let g:shfmt_fmt_on_save = 1
 
-"MAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"MAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 "Check keystroke = [InsertMode] <C-v> $key
 "Check value of keystroke = :map $key
@@ -296,13 +296,14 @@ map <silent> <C-z> :Files<CR>
 map <silent> <C-p> :Files<CR>
 " map <C-Bslash> :Files<CR>
 " map <leader><Bslash> :Files<CR>
-call arpeggio#map('n','','0','op',':Files<CR>')
+call arpeggio#map('n','','0','io',':Files<CR>')
 
 "Ack Search
 call arpeggio#map('n','','0','zx',':Ack ')
 
 "Rg Search
-call arpeggio#map('n','','0','qw',':Rg ')
+call arpeggio#map('n','','0','we',':Rg ')
+
 
 "Tag List of Variables
 nmap <leader>z :TlistToggle<CR><C-h>
@@ -351,8 +352,9 @@ nnoremap X xh
 "copy to end-of-line
 nnoremap Y y$
 
-"paste one space forward
-nnoremap <leader>p a<SPACE><ESC>p
+"paste after word
+nnoremap <leader>p viwo<Esc>ea<SPACE><ESC>p
+nnoremap <leader><leader>p gea<SPACE><ESC>p
 
 "delete/insert line
 nnoremap <leader>d S
@@ -370,6 +372,12 @@ call arpeggio#map('i','','0','jk','<ESC>')
 "go to line start/end
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+"go to matching parenthesis
+nnoremap # %
+vnoremap # %
 
 "swap left/right paragraph motion for curly brackets
 noremap { }
@@ -397,7 +405,7 @@ nmap <leader>s :SudaWrite<CR>
 nmap Q :q<CR>
 nmap <leader>Q! :q!<CR>
 
-"Buffers & Tabs ------------------------------------------------------
+"Buffers & Tabs --------------------------------------------
 
 "next buffer (NerdTreeOpen to prevent NerdTree window bug)
 nnoremap <silent> <Tab> :call NerdTreeOpen(':bn')<CR>
@@ -521,7 +529,7 @@ vnoremap S "hy:%s/<C-r>h//g<left><left>
 "enter append mode with 'kl'
 call arpeggio#map('n','','0','kl','a')
 
-"Github Maps ---------------------------------------------------------
+"Github Maps -----------------------------------------------
 
 "GitGutter Mappings
 nmap & :GitGutterSignsToggle<CR>
@@ -561,7 +569,7 @@ vnoremap gB :GBrowse<CR>
 "Compare current file to previous commit
 command Gvdiff Gvdiffsplit
 
-"Debugger ------------------------------------------------------------
+"Debugger --------------------------------------------------
 
 "Maximize into debugger windows
 function! GotoWindow(id)
@@ -574,7 +582,8 @@ nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
 nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
 nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR
+>
 nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
 nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
 nnoremap <leader>de :call vimspector#Reset()<CR>
@@ -591,12 +600,12 @@ nmap <leader>drc <Plug>VimspectorRunToCursor
 nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
-"VimDiff -------------------------------------------------------------
+"VimDiff ---------------------------------------------------
 
 "compare two vertical windows
 command Vdiff windo diffthis  
 
-"Colorschemes --------------------------------------------------------
+"Colorschemes ----------------------------------------------
 
 command Morokai colo morokai
 command Marakai colo marakai
@@ -610,11 +619,11 @@ command Edge colo edge
 command Codedark colo codedark
 command Onedark colo onedark
 
-"Open Current File ---------------------------------------------------
+"Open Current File -----------------------------------------
 
 command Open !xdg-open %
 
-"Word Count ----------------------------------------------------------
+"Word Count ------------------------------------------------
 
 command Wordcount :call WordCount()
 
@@ -626,7 +635,7 @@ function WordCount()
   endif
 endfunction
 
-"Transcription Maps --------------------------------------------------
+"Transcription Maps ----------------------------------------
 
 "set one space at start of next sentence
 nnoremap <leader><BS> bf.whvblxi<SPACE><ESC>l
@@ -634,4 +643,4 @@ nnoremap <leader><BS> bf.whvblxi<SPACE><ESC>l
 "toggle word-wrap (linebreak)
 nnoremap <C-SPACE> :set linebreak!<CR>
 
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
