@@ -201,7 +201,7 @@ let g:SignatureMap = {
   \ }
 
 "time-delay (ms) for key-combo execution
-let g:arpeggio_timeoutlen = 80
+let g:arpeggio_timeoutlen = 100
 
 " easy-motion bug fix
 let g:easymotion#is_active = 0
@@ -296,13 +296,13 @@ map <silent> <C-z> :Files<CR>
 map <silent> <C-p> :Files<CR>
 " map <C-Bslash> :Files<CR>
 " map <leader><Bslash> :Files<CR>
-call arpeggio#map('n','','0','io',':Files<CR>')
+call arpeggio#map('n','','0','we',':Files<CR>')
 
 "Ack Search
 call arpeggio#map('n','','0','zx',':Ack ')
 
 "Rg Search
-call arpeggio#map('n','','0','we',':Rg ')
+call arpeggio#map('n','','0','qw',':Rg ')
 
 
 "Tag List of Variables
