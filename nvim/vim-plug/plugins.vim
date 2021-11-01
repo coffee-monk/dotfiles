@@ -13,7 +13,8 @@ let g:coc_global_extensions = [
 	\ 'coc-html',
 	\ 'coc-css',
 	\ 'coc-json',
-	\ 'coc-sh'
+	\ 'coc-sh',
+	\ 'coc-tailwindcss'
   \ ]
 
 call plug#begin('~/.config/nvim/autoload/plugged')
