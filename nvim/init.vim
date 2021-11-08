@@ -58,7 +58,7 @@ let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/n
 "coc-snippets next placeholder
 " let g:coc_snippet_next = '<C-j>'
 " let g:coc_snippet_prev = '<C-k>'
-let g:coc_snippet_prev = '<CR>'
+let g:coc_snippet_next = '<CR>'
 
 "Lightline Config
 let g:lightline = {
