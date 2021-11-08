@@ -56,11 +56,15 @@ autocmd BufRead,BufNewFile *.ejs setfiletype html
 let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/nvim/vimwiki/vimwiki-HTML'}]
 
 "coc-snippets next placeholder
-let g:coc_snippet_next = '<C-j>'
-let g:coc_snippet_prev = '<C-k>'
+" let g:coc_snippet_next = '<C-j>'
+" let g:coc_snippet_prev = '<C-k>'
+let g:coc_snippet_prev = '<CR>'
 
 "Lightline Config
 let g:lightline = {
+      \ 'component_function': {
+      \ 'filename': 'LightlineFilename',
+      \ },
       \ 'colorscheme': g:colors_name,
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -70,6 +74,15 @@ let g:lightline = {
       \   'right': [ ['lineinfo'] ]
       \ },
       \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 "Tcomment prevent mappings
 let g:tcomment_maps=''
