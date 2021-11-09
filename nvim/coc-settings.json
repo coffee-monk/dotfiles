@@ -19,10 +19,8 @@
 
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-
   "tsserver.enable": true,
-
-  "css.lint.unknownAtRules": "ignore",
+  "typescript.suggestionActions.enabled": false,
 
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"]
 }
