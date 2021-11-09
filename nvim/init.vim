@@ -56,9 +56,8 @@ autocmd BufRead,BufNewFile *.ejs setfiletype html
 let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/nvim/vimwiki/vimwiki-HTML'}]
 
 "coc-snippets next placeholder
-" let g:coc_snippet_next = '<C-j>'
-" let g:coc_snippet_prev = '<C-k>'
 let g:coc_snippet_next = '<CR>'
+" let g:coc_snippet_prev = '<C-k>'
 
 "Lightline Config
 let g:lightline = {
