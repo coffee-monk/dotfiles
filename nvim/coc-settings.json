@@ -22,5 +22,8 @@
   "tsserver.enable": true,
   "typescript.suggestionActions.enabled": false,
 
+  "css.enable": true,
+  "css.lint.unknownAtRules": "ignore",
+
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"]
 }
