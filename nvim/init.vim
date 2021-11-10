@@ -506,6 +506,7 @@ nmap <leader>h zb
 
 "toggle relative mode or line numbers
 nmap <silent> @ :set relativenumber!<CR>
+vmap <silent> @ :set relativenumber!<CR>
 
 "toggle indentLines
 nnoremap ^ :IndentLinesToggle<CR>
