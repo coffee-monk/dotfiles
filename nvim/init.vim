@@ -20,14 +20,14 @@ set clipboard=unnamedplus
 
 set cursorline
 
-"wraps text without breaking words
+"toggle word-wrap (linebreak)
 set linebreak
 
 "set height of cmd
 set cmdheight=1
 
 "update interval
-set updatetime=750
+set updatetime=150
 
 "tab/arrow completion for vim cmd
 set wildmenu
@@ -56,8 +56,9 @@ autocmd BufRead,BufNewFile *.ejs setfiletype html
 let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/nvim/vimwiki/vimwiki-HTML'}]
 
 "coc-snippets next placeholder
-let g:coc_snippet_next = '<CR>'
+" let g:coc_snippet_next = '<C-j>'
 " let g:coc_snippet_prev = '<C-k>'
+let g:coc_snippet_next = '<CR>'
 
 "Lightline Config
 let g:lightline = {
@@ -261,10 +262,10 @@ local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
 t['<PageUp>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '300'}}
 t['<PageDown>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '300'}}
-t['<S-PageUp>'] = {'scroll', {'-vim.wo.scroll', 'true', '150'}}
-t['<S-PageDown>'] = {'scroll', { 'vim.wo.scroll', 'true', '150'}}
-t['+'] = {'scroll', {'-vim.wo.scroll', 'true', '150'}}
-t['_'] = {'scroll', { 'vim.wo.scroll', 'true', '150'}}
+t['<S-PageUp>'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
+t['<S-PageDown>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
+t['+'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
+t['_'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
 t['zt'] = {'zt', {'100'}}
 t['zz'] = {'zz', {'100'}}
 t['zb'] = {'zb', {'100'}}
@@ -295,6 +296,9 @@ vmap ; :<BS><BS><BS><BS><BS>
 "define vim-emmet leader key
 imap ,, <C-y>,
 
+"vim wiki
+nmap <Leader>` <Plug>VimwikiTabIndex
+
 "Floaterm enter & exit
 nnoremap <silent> ~ :FloatermToggle<CR>
 tnoremap <silent> ~ <C-\><C-n>:FloatermToggle<CR>
@@ -316,7 +320,6 @@ call arpeggio#map('n','','0','zx',':Ack ')
 "Rg Search
 call arpeggio#map('n','','0','qw',':Rg ')
 
-
 "Tag List of Variables
 nmap <leader>z :TlistToggle<CR><C-h>
 nmap <C-Bslash> :TlistToggle<CR><C-h>
@@ -330,12 +333,9 @@ nmap gr <Plug>(coc-references)
 "Manual Lookup of key under cursor
 nnoremap 0 K
 
-"Word/Char Count
-nnoremap <leader>wc g<C-g>
-vnoremap <leader>wc g<C-g>
-
-"Current file location
-nnoremap <leader>f <C-g>
+"Word/Char/Line Count
+nnoremap <leader>f g<C-g>
+vnoremap <leader>f g<C-g>
 
 "capitalization toggle instead of signature-mark
 nnoremap ` ~
@@ -346,6 +346,9 @@ call arpeggio#map('n','','0','ds','s')
 
 "exit search highlight 
 nnoremap <silent> <ESC> :noh<CR>
+
+"highlight all words under cursor
+nnoremap $ *
 
 "<Enter> key behavior
 nmap <CR> O<ESC>j
@@ -435,8 +438,7 @@ nnoremap <silent> qq :call NerdTreeOpen(':bp\|:bd #')<CR>
 nnoremap <silent> <leader><leader>q :call NerdTreeOpen(':bp\|:bd! #')<CR> 
 
 "tab create/close
-nnoremap <silent> <leader>` :call NerdTreeOpen(':tabnew')<CR>
-nnoremap <silent> <leader>~ :call NerdTreeOpen(':tabclose')<CR>
+nnoremap <silent> * :call NerdTreeOpen(':tabnew')<CR>
 
 "tab next/prev
 nnoremap ) gt
@@ -506,10 +508,10 @@ nmap <leader>h zb
 
 "toggle relative mode or line numbers
 nmap <silent> @ :set relativenumber!<CR>
-vmap <silent> @ :set relativenumber!<CR>
+vnoremap <silent> @ :set relativenumber!<CR>
 
 "toggle indentLines
-nnoremap ^ :IndentLinesToggle<CR>
+nnoremap ^ :set linebreak!<CR>
 
 "! toggles split screen maximize
 nmap <silent> ! :MaximizerToggle!<CR>
@@ -560,7 +562,7 @@ nmap <leader>gA :Git add .<CR>
 nmap gu <Plug>(GitGutterUndoHunk)
 nnoremap gU :! git reset<CR>
 
-"Clear staging area
+"Preview hunk changes
 nmap gP <Plug>(GitGutterPreviewHunk)
 
 "Commit
@@ -595,8 +597,7 @@ nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
 nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
 nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR
->
+nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
 nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
 nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
 nnoremap <leader>de :call vimspector#Reset()<CR>
@@ -613,7 +614,10 @@ nmap <leader>drc <Plug>VimspectorRunToCursor
 nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
-"VimDiff ---------------------------------------------------
+"Source config file to restart config
+nnoremap <C-SPACE> :source $MYVIMRC<CR>
+
+"Commands --------------------------------------------------
 
 "compare two vertical windows
 command Vdiff windo diffthis  
@@ -652,8 +656,5 @@ endfunction
 
 "set one space at start of next sentence
 nnoremap <leader><BS> bf.whvblxi<SPACE><ESC>l
-
-"toggle word-wrap (linebreak)
-nnoremap <C-SPACE> :set linebreak!<CR>
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
