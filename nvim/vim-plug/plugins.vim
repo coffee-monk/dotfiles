@@ -55,7 +55,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'machakann/vim-sandwich'
 	Plug 'tomtom/tcomment_vim'
 	Plug 'jiangmiao/auto-pairs'
-  Plug 'airblade/vim-matchquote'
 	Plug 'luochen1990/rainbow'
 	Plug 'lilydjwg/colorizer'
   Plug 'mg979/vim-visual-multi'
@@ -63,6 +62,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'Valloric/MatchTagAlways'
+  Plug 'airblade/vim-matchquote'
   Plug 'Yggdroot/indentLine'
   Plug 'chrisbra/improvedft'
 
