@@ -155,6 +155,7 @@ alias vc="nvim ~/.config/nvim/init.vim"
 
 alias vf="cd ~/.config/nvim"
 alias vp="nvim ~/.config/nvim/vim-plug/plugins.vim"
+alias vw="cd ~/.config/nvim/vimwiki"
 
 alias zshrc="nvim ~/.zshrc"
 alias zrc="nvim ~/.zshrc"

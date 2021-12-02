@@ -11,14 +11,15 @@
     "yaml",
     "json",
     "python",
+    "py",
     "ejs"
   ],
 
   "prettier.arrowParens": "avoid",
   "prettier.semi": false,
 
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black",
 
   "tsserver.enable": true,
   "typescript.suggestionActions.enabled": false,

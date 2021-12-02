@@ -9,7 +9,7 @@ let g:coc_global_extensions = [
 	\ 'coc-tabnine',
 	\ 'coc-snippets',
 	\ 'coc-tsserver',
-	\ 'coc-python',
+	\ 'coc-pyright',
 	\ 'coc-html',
 	\ 'coc-css',
 	\ 'coc-json',

@@ -30,6 +30,8 @@ function! s:colorscheme2lightline()
       hi TabLineFill guibg=NONE ctermbg=NONE
       hi Directory guibg=NONE ctermbg=NONE
       call s:lightline_update()
+      hi CocInfoSign guifg=#777777
+      hi CocWarningSign guifg=#777777
     "Opaque Background
     elseif g:colors_name =~# 'sonokai\|everforest\|nord'
       call s:lightline_update()

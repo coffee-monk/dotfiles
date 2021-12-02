@@ -12,6 +12,9 @@ cp -r ./.bashrc ~/
 cp -r ./.zshrc ~/
 cp -r ./.zshenv ~/
 
+# Python formatter for nvim
+cp ./scripts/black ~/.local/bin
+
 #Wallpapers for Workspaces
 mkdir -p ~/.local/bin
 cp -r ./images/workspace-images ~/Pictures
