@@ -72,6 +72,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " FORMATTING
   Plug 'z0mbix/vim-shfmt', { 'for': 'sh' } "install shfmt 1st
+  Plug 'neoclide/jsonc'
 
   " SYNTAX HIGHLIGHTING & COLORSCHEMES
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

@@ -84,8 +84,11 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
-"Tcomment prevent mappings
+" Tcomment prevent mappings
 let g:tcomment_maps=''
+
+" Typescript: tsconfig.json > tsconfig.jsonc
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 "Markdown-Preview
 let g:mkdp_auto_start = 1
