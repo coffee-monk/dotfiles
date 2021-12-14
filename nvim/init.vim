@@ -187,11 +187,6 @@ let g:NERDTreeMapToggleFilters = '<C-f>'
 autocmd BufEnter NERD_tree* | execute 'normal R'
 "change Nerdtree root to pwd
 let NERDTreeChDirMode=2
-"update nerdtree directory when :cd command is run
-augroup DIRCHANGE
-    au!
-    autocmd DirChanged global :NERDTreeCWD
-augroup END
 
 let Tlist_WinWidth = 45
 let Tlist_WinWidth = 45
