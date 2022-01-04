@@ -22,11 +22,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" CORE VIM PLUGINS
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vimwiki/vimwiki'
-	Plug 'scrooloose/NERDTree'
-	Plug 'ryanoasis/vim-devicons'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
-	Plug 'junegunn/fzf.vim'
   Plug 'mileszs/ack.vim'
 	Plug 'lambdalisue/suda.vim'
 	Plug 'tpope/vim-eunuch'
@@ -42,6 +37,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'szw/vim-maximizer'
   Plug 'will133/vim-dirdiff'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+  " FILE MANAGEMENT
+	Plug 'scrooloose/NERDTree'
+	Plug 'ryanoasis/vim-devicons'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+	Plug 'junegunn/fzf.vim'
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
 
   " GIT
   Plug 'airblade/vim-gitgutter'
@@ -72,7 +76,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " FORMATTING
   Plug 'z0mbix/vim-shfmt', { 'for': 'sh' } "install shfmt 1st
-  Plug 'neoclide/jsonc'
+  Plug 'neoclide/jsonc.vim'
 
   " SYNTAX HIGHLIGHTING & COLORSCHEMES
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

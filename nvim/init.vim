@@ -45,6 +45,7 @@ set ignorecase
 set smartcase
 set nocompatible
 set noshowcmd
+set relativenumber
 filetype plugin on
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
@@ -59,6 +60,11 @@ let g:vimwiki_list = [{'path':'~/.config/nvim/vimwiki', 'path_html':'~/.config/n
 " let g:coc_snippet_next = '<C-j>'
 " let g:coc_snippet_prev = '<C-k>'
 let g:coc_snippet_next = '<CR>'
+
+"coc gutter sign colors
+" hi! CocErrorSign guifg=#d1666a
+hi! CocInfoSign guifg=#777777
+hi! CocWarningSign guifg=#777777
 
 "Lightline Config
 let g:lightline = {
@@ -84,15 +90,15 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
-" Tcomment prevent mappings
+"Tcomment prevent mappings
 let g:tcomment_maps=''
 
 " Typescript: tsconfig.json > tsconfig.jsonc
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 "Markdown-Preview
-let g:mkdp_auto_start = 1
-let g:mkdp_auto_close = 1
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 0
 
 " Floaterm Terminal
 let g:floaterm_width=1.0
@@ -180,20 +186,26 @@ let g:indentLine_defaultGroup = 'LineNr'
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeWinSize = 35
 let g:NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 1
 let g:NERDTreeMapMenu = 'v'
 let g:NERDTreeMapToggleFilters = '<C-f>'
 "refresh Nerdtree when buffer is entered
 autocmd BufEnter NERD_tree* | execute 'normal R'
 "change Nerdtree root to pwd
 let NERDTreeChDirMode=2
-
-let Tlist_WinWidth = 45
-let Tlist_WinWidth = 45
+"update nerdtree directory when :cd command is run
+" augroup DIRCHANGE
+"     au!
+"     autocmd DirChanged global :NERDTreeCWD
+" augroup END
+" let Tlist_WinWidth = 45
 
 "exit vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " autocmd BufEnter * :call NerdTreeLastWindowCloseVim()
+
+" ranger.vim disable default keymaps
+let g:ranger_map_keys = 0
 
 "Improved ft searching
 let g:ft_improved_ignorecase = 1
@@ -317,6 +329,9 @@ map <silent> <C-p> :Files<CR>
 " map <C-Bslash> :Files<CR>
 " map <leader><Bslash> :Files<CR>
 call arpeggio#map('n','','0','we',':Files<CR>')
+
+"Ranger.vim
+call arpeggio#map('n','','0','er',':Ranger<CR>')
 
 "Ack Search
 call arpeggio#map('n','','0','zx',':Ack ')
@@ -623,6 +638,9 @@ nnoremap <C-SPACE> :source $MYVIMRC<CR>
 
 "Commands --------------------------------------------------
 
+" Ranger file manager
+command R Ranger
+
 "compare two vertical windows
 command Vdiff windo diffthis  
 
@@ -643,6 +661,7 @@ command Onedark colo onedark
 "Open Current File -----------------------------------------
 
 command Open !xdg-open %
+command OpenMarkdown MarkdownPreview
 
 "Word Count ------------------------------------------------
 
