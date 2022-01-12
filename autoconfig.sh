@@ -12,12 +12,9 @@ cp -r ./.bashrc ~/
 cp -r ./.zshrc ~/
 cp -r ./.zshenv ~/
 
-# Python formatter for nvim
-cp ./scripts/black ~/.local/bin
-
 #Wallpapers for Workspaces
-mkdir -p ~/.local/bin
 cp -r ./images/workspace-images ~/Pictures
+mkdir -p ~/.local/bin
 cp ./scripts/workspace_background_switcher.sh ~/.local/bin
 cp ./scripts/workspace_background_switcher.desktop ~/.config/autostart/
 # gsettings set org.cinnamon.desktop.background picture-uri "file:$HOME/Pictures/workspace-images/chill1.jpg"
@@ -25,6 +22,9 @@ cp ./scripts/workspace_background_switcher.desktop ~/.config/autostart/
 #Run Workspace Background Switcher as daemon in first session
 chmod 777 ~/.local/bin/workspace_background_switcher.sh
 setsid ~/.local/bin/workspace_background_switcher.sh >/dev/null 2>&1 </dev/null &
+
+#Copy scripts to ~/.local/bin
+cp -r ./scripts ~/.local/bin
 
 #Change Start Menu Icon
 sudo cp ./images/start-icon/1Up.svg /usr/share/icons/hicolor/scalable/apps/linuxmint-logo-ring-symbolic.svg
@@ -70,9 +70,7 @@ apt update
 apt install chromium-browser -y
 
 #Install Icons
-sudo add-apt-repository ppa:papirus/papirus -y
-apt-get update
-sudo apt-get install papirus-icon-theme
+wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 #Install and Execute ZSH
 apt install zsh -y
