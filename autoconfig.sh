@@ -23,11 +23,15 @@ cp ./scripts/workspace_background_switcher.desktop ~/.config/autostart/
 chmod 777 ~/.local/bin/workspace_background_switcher.sh
 setsid ~/.local/bin/workspace_background_switcher.sh >/dev/null 2>&1 </dev/null &
 
+#Python formatting support
+cp ./scripts/black ~/.local/bin
+
 #Copy scripts to ~/.local/bin
-cp -r ./scripts ~/.local/bin
+mkdir ~/bin
+cp -r ./scripts/toggle_remove_titlebar.sh ~/bin
 
 #Change Start Menu Icon
-sudo cp ./images/start-icon/1Up.svg /usr/share/icons/hicolor/scalable/apps/linuxmint-logo-ring-symbolic.svg
+sudo cp ./images/start-icon/Ed.png /usr/share/icons/hicolor/scalable/apps/linuxmint-logo-ring-symbolic.svg
 #Original put in ./Pictures
 cp ./images/start-icon/Ed.png ~/Pictures
 
