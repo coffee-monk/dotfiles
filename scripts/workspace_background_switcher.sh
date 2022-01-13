@@ -13,10 +13,10 @@
 # WORKSPACE_BACKGROUND[3]="/home/acorn/Pictures/Workspace_Images/space4.jpg"
 
 # Spacegirl theme
-WORKSPACE_BACKGROUND[0]="$HOME/Pictures/workspace-images/chill1.jpg"
-WORKSPACE_BACKGROUND[1]="$HOME/Pictures/workspace-images/chill2.jpg"
-WORKSPACE_BACKGROUND[2]="$HOME/Pictures/workspace-images/chill3.jpg"
-WORKSPACE_BACKGROUND[3]="$HOME/Pictures/workspace-images/chill4.jpg"
+WORKSPACE_BACKGROUND[0]="$HOME/Pictures/workspace-images/ed1.jpg"
+WORKSPACE_BACKGROUND[1]="$HOME/Pictures/workspace-images/ed2.jpg"
+WORKSPACE_BACKGROUND[2]="$HOME/Pictures/workspace-images/ed3.jpg"
+WORKSPACE_BACKGROUND[3]="$HOME/Pictures/workspace-images/ed4.jpg"
 
 # Main script starts here
 # Check for existing instances and kill them leaving current instance running

@@ -33,7 +33,7 @@ format = "🕑:[$duration](bold #dfff00) "  #🕑
 format = "[⬢ $version ](bold #8ae234)"
 
 [python]
-format = '[$symbol$pyenv_prefix$version $virtualenv](bold #acd04a)'
+format = '[$symbol$pyenv_prefix$version $virtualenv](bold #acd04a) '
 
 [git_branch]
 format = "[$symbol$branch](#cb1ed1) "
