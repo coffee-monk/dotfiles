@@ -16,13 +16,13 @@ stty stop "" # Allow Ctrl+S in VIM
 #GIT: Check/Install
 if ! [ -f $(where git | head -n 1 | sed -e 's/\s.*$//') ]; then
   echo 'GIT NOT INSTALLED: Installing GIT...'
-  apt install git 
+  apt install git -y
 fi
 
 #CURL: Check/Install
 if ! [ -f $(where curl | head -n 1 | sed -e 's/\s.*$//') ]; then
   echo 'CURL NOT INSTALLED: Installing CURL...'
-  apt install curl 
+  apt install curl -y
 fi
 
 #PROMPT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

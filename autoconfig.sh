@@ -31,7 +31,7 @@ mkdir ~/bin
 cp -r ./scripts/toggle_remove_titlebar.sh ~/bin
 
 #Change Start Menu Icon
-sudo cp ./images/start-icon/Ed.png /usr/share/icons/hicolor/scalable/apps/linuxmint-logo-ring-symbolic.svg
+sudo cp ./images/start-icon/1Up.svg /usr/share/icons/hicolor/scalable/apps/linuxmint-logo-ring-symbolic.svg
 #Original put in ./Pictures
 cp ./images/start-icon/Ed.png ~/Pictures
 
