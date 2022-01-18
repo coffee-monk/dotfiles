@@ -530,7 +530,7 @@ nmap <silent> @ :set relativenumber!<CR>
 vnoremap <silent> @ :set relativenumber!<CR>
 
 "toggle indentLines
-nnoremap ^ :set linebreak!<CR>
+nnoremap & :set linebreak!<CR>
 
 "! toggles split screen maximize
 nmap <silent> ! :MaximizerToggle!<CR>
@@ -566,7 +566,7 @@ call arpeggio#map('n','','0','kl','a')
 "Github Maps -----------------------------------------------
 
 "GitGutter Mappings
-nmap & :GitGutterSignsToggle<CR>
+nmap ^ :GitGutterSignsToggle<CR>
 nmap <C-9> <Plug>(GitGutterNextHunk)
 nmap <C-0> <Plug>(GitGutterPrevHunk)
 nmap gj <Plug>(GitGutterNextHunk)
