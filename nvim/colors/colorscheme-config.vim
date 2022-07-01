@@ -3,15 +3,18 @@
 "ColorScheme Description: :h gui-colors
 
 set termguicolors
+
+"Colorscheme Tweaks for All Colorschemes
+autocmd ColorScheme * highlight CursorLine guibg=NONE ctermbg=NONE | highlight SignColumn guibg=NONE ctermbg=NONE | highlight CursorLineNr guibg=NONE ctermbg=NONE | highlight StatusLine gui=bold | highlight StatusLineNC gui=italic 
+
 colorscheme marakai
 
-let g:gruvbox_transparent_bg = 1
-let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_italic = 1
+"Github Colorscheme Configs ------------------------------------------
+let g:onedark_config = {
+    \ 'style': 'deep',
+\}
 
-let g:sonokai_style = 'shusia'
-
-"Update lightline color with colorscheme change
+"Update lightline color with colorscheme change =====================
 augroup LightLineColorscheme
   autocmd!
   autocmd ColorScheme * call s:colorscheme2lightline()
@@ -23,7 +26,7 @@ function! s:colorscheme2lightline()
   endif
   try
     "Transparent Background
-    if g:colors_name =~# 'morokai\|marakai\|gruvbox\|palenight\|edge\|codedark\|darcula\|onedark'
+    if g:colors_name =~# 'morokai\|marakai\|codedark'
       hi Normal guibg=NONE ctermbg=NONE
       hi EndOfBuffer guibg=NONE ctermbg=NONE
       hi LineNr guibg=NONE ctermbg=NONE
@@ -33,11 +36,7 @@ function! s:colorscheme2lightline()
       hi CocInfoSign guifg=#777777
       hi CocWarningSign guifg=#777777
     "Opaque Background
-    elseif g:colors_name =~# 'sonokai\|everforest\|nord'
-      call s:lightline_update()
-    "Nightowl Background
-    elseif g:colors_name =~# 'nightowl'
-      hi Normal guibg=#011627 ctermbg=NONE
+    elseif g:colors_name =~# 'sonokai\|everforest\|edge'
       call s:lightline_update()
     endif 
   catch
@@ -52,6 +51,3 @@ function! s:lightline_update()
       call lightline#colorscheme()
       call lightline#update()
 endfunction
-
-"Colorscheme Tweaks for All Colorschemes
-autocmd ColorScheme * highlight CursorLine guibg=NONE ctermbg=NONE | highlight SignColumn guibg=NONE ctermbg=NONE | highlight CursorLineNr guibg=NONE ctermbg=NONE | highlight StatusLine gui=bold | highlight StatusLineNC gui=italic 

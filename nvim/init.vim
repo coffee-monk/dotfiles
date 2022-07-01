@@ -9,8 +9,6 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/colors/colorscheme-config.vim
 
-"Colorschemes: mjc/gruvbox/night-owl/sonokai/palenight/nord
-
 "VIM BASIC SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -127,7 +125,7 @@ let g:magit_discard_untracked_do_delete=1
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", 
+  ensure_installed = "javascript", 
   highlight = {
     enable = true,
     disable = {},  -- list of language that will be disabled
@@ -291,7 +289,7 @@ EOF
 "vim-shfmt - autoformat on save
 let g:shfmt_fmt_on_save = 1
 
-"MAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"Keymaps >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 "Check keystroke = [InsertMode] <C-v> $key
 "Check value of keystroke = :map $key
@@ -403,12 +401,6 @@ nnoremap <leader><Bar> <Bar>
 "exit 
 call arpeggio#map('i','','0','jk','<ESC>')
 
-"go to line start/end
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
-
 "go to matching parenthesis
 nnoremap # %
 vnoremap # %
@@ -423,14 +415,33 @@ nnoremap <leader>= {w
 vnoremap <leader>- }ge^
 vnoremap <leader>= {w
 
+"visual select to beginning/end of paragraph
+call arpeggio#map('n','','0','sj','V}ge^')
+call arpeggio#map('n','','0','sk','V{w')
+call arpeggio#map('v','','0','sj','}ge^')
+call arpeggio#map('v','','0','sk','{w')
+
+"visual select to next/previous paragraph
+call arpeggio#map('n','','0','sn','V}}{wwb')
+call arpeggio#map('n','','0','so','V{{wwb')
+call arpeggio#map('v','','0','sn','}}{wwb')
+call arpeggio#map('v','','0','so','{{wwb')
+
 "set -/= as paragraph motion (top)
 nnoremap = {{wwb
 nnoremap - }}{wwb
 vnoremap = {{wwb
 vnoremap - }}{wwb
 
-"<leader>equals as indent
-nnoremap <leader> =
+"go to line start/end
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+"visual select to beginning/end of line
+call arpeggio#map('n','','0','sl','v$h')
+call arpeggio#map('n','','0','sh','v^')
 
 "save and quit commands
 nmap <C-s> :w!<CR>
@@ -522,8 +533,10 @@ nmap U <C-r>
 "show cursorline at middle/top
 nmap <leader>j zz
 nmap <leader>k zt
-nmap <leader>l zb
 nmap <leader>h zb
+vmap <leader>j zz
+vmap <leader>k zt
+vmap <leader>h zb
 
 "toggle relative mode or line numbers
 nmap <silent> @ :set relativenumber!<CR>
@@ -648,12 +661,8 @@ command Vdiff windo diffthis
 
 command Morokai colo morokai
 command Marakai colo marakai
-command Nightowl colo nightowl
-command Gruvbox colo gruvbox
-command Nord colo nord
 command Sonokai colo sonokai
 command Everforest colo everforest
-command Palenight colo palenight
 command Edge colo edge
 command Codedark colo codedark
 command Onedark colo onedark

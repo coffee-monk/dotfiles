@@ -77,19 +77,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FORMATTING
   Plug 'z0mbix/vim-shfmt', { 'for': 'sh' } "install shfmt 1st
   Plug 'neoclide/jsonc.vim'
+  Plug 'beanworks/vim-phpfmt'
 
   " SYNTAX HIGHLIGHTING & COLORSCHEMES
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'coffee-monk/gruvbox'
   Plug 'coffee-monk/morokai'
   Plug 'coffee-monk/marakai'
-  Plug 'coffee-monk/nightowl'
   Plug 'coffee-monk/codedark'
   Plug 'sainnhe/sonokai'
   Plug 'sainnhe/edge'
   Plug 'sainnhe/everforest'
-  Plug 'arcticicestudio/nord-vim'
-  Plug 'drewtempelmeyer/palenight.vim'
-  Plug 'joshdick/onedark.vim'
+  Plug 'navarasu/onedark.nvim'
 
 call plug#end()
