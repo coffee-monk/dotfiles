@@ -147,7 +147,10 @@ if status then
 	bufferline.setup({
 		options = {
 			separator_style = { "" },
-			indicator_icon = " ",
+			indicator_icon = {
+				icon = " ",
+				style = "icon",
+			},
 			offsets = {
 				{
 					filetype = "NvimTree",

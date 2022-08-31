@@ -75,6 +75,7 @@ alias gcl="git clone "
 alias gc="git commit -m "
 alias gs="git status"
 alias ga="git add ."
+alias gp="git push ."
 
 # Starship Prompt ------------------------------------------
 
