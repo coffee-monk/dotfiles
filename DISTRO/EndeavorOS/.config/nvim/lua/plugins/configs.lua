@@ -147,7 +147,7 @@ if status then
 	bufferline.setup({
 		options = {
 			separator_style = { "" },
-			indicator_icon = {
+			indicator = {
 				icon = " ",
 				style = "icon",
 			},
