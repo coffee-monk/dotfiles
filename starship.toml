@@ -27,7 +27,7 @@ time_format = "🌼 %I:%M" #🍇🍵 👁
 use_12hr = false
 
 [cmd_duration]
-format = "🕑:[$duration](bold #dfff00) "  #🕑
+format = "[$duration](bold #dfff00) "  #🕑
 
 [nodejs]
 format = "[⬢ $version ](bold #8ae234)"
