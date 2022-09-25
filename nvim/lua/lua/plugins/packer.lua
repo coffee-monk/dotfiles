@@ -74,6 +74,7 @@ return require("packer").startup(function()
 	use("svermeulen/vim-extended-ft")
 
 	-- Colorschemes
+	use({ "Everblush/everblush.nvim", as = "everblush" })
 	use("rktjmp/lush.nvim") -- colorscheme creation tool
 	use("EdenEast/nightfox.nvim")
 	use("ellisonleao/gruvbox.nvim")
@@ -89,5 +90,7 @@ return require("packer").startup(function()
 	use("shaunsingh/nord.nvim")
 	use("sainnhe/everforest")
 	use("ishan9299/nvim-solarized-lua")
-	use({ "Everblush/everblush.nvim", as = "everblush" })
+	use("navarasu/onedark.nvim")
+	use("artanikin/vim-synthwave84")
+	use("Mofiqul/dracula.nvim")
 end)
