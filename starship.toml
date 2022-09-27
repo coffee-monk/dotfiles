@@ -12,7 +12,9 @@ disabled = true
 """
  error_symbol = """[♥](bold red)
 """
- vicmd_symbol = """[♥](bold green)
+ vimcmd_symbol = """[♥](bold green)
+"""
+ vimcmd_visual_symbol = """[♥](bold green)
 """
 
 [directory]
