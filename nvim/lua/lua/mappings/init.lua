@@ -35,9 +35,6 @@ map("n", "<ESC>", ":noh<CR>")
 map("n", "<CR>", "O<ESC>j")
 map("n", "<Leader><CR>", "O<ESC>")
 
--- insert line
-map("n", "<Leader>o", "O")
-
 -- break line at character
 map("n", "K", "i<CR><ESC>")
 
@@ -306,9 +303,9 @@ pcall(
 pcall(
 	vim.cmd,
 	[[
-    "enter/escape insert mode
+    "new-line/escape insert mode
     call arpeggio#map('i', 's', '0', 'jk', '<Esc>')
-    call arpeggio#map('n','s','0','kl','a')
+    call arpeggio#map('n','s','0','kl','O')
 
     "visual select to beginning/end of paragraph
     call arpeggio#map('n','s','0','sj',":call QuickMove_Down('n')<CR>")

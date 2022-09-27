@@ -230,7 +230,7 @@ if status then
 	t["+"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
 	t["_"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
 	t["<Leader>p"] = { "scroll", { "-0.25", "true", "250" } }
-	t["<Leader>n"] = { "scroll", { "0.25", "true", "250" } }
+	t["<Leader>o"] = { "scroll", { "0.25", "true", "250" } }
 	t["zt"] = { "zt", { "150" } }
 	t["zz"] = { "zz", { "150" } }
 	t["zb"] = { "zb", { "150" } }

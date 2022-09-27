@@ -18,6 +18,8 @@ local themes = {
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
+	{ "Onedark", { theme = "onedark", lua_loc = "lualine.themes.onedark" } },
+	{ "Dracula", { theme = "dracula", lua_loc = "lualine.themes.dracula-nvim" } },
 	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.marakai_lualine" } },
 }
 
