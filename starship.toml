@@ -25,7 +25,7 @@ style = "bold #34e2e2"
 [time]
 format = '[$time](bold #dfff00) '
 disabled = false
-time_format = "🌼 %I:%M" #🍇🍵 👁
+time_format = "%I:%M" #🍇🍵 👁
 use_12hr = false
 
 [cmd_duration]
