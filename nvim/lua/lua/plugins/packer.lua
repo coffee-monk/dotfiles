@@ -2,7 +2,7 @@
 
 -- source packer on save
 vim.cmd([[
-augroup packer_user_config
+ augroup packer_user_config
  autocmd!
  autocmd BufWritePost packer.lua source <afile>
  augroup end
