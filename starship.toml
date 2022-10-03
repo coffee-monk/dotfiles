@@ -16,6 +16,10 @@ disabled = true
 """
  vimcmd_visual_symbol = """[♥](bold green)
 """
+ vimcmd_replace_symbol = """[♥](bold green)
+"""
+ vimcmd_replace_one_symbol = """[♥](bold green)
+"""
 
 [directory]
 truncation_length = 1
