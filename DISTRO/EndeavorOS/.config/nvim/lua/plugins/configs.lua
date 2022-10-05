@@ -79,6 +79,9 @@ if status then
 			side = "right",
 			hide_root_folder = true,
 		},
+		filters = {
+			dotfiles = true,
+		},
 		actions = {
 			open_file = {
 				window_picker = {
@@ -148,7 +151,7 @@ if status then
 		options = {
 			separator_style = { "" },
 			indicator = {
-				icon = " ",
+				icon = { " " },
 				style = "icon",
 			},
 			offsets = {
@@ -226,7 +229,7 @@ if status then
 	-- Syntax: t[keys] = {function, {function arguments}}
 	t["+"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
 	t["_"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
-	t["<Leader>p"] = { "scroll", { "-0.25", "true", "250" } }
+	t["<Leader>o"] = { "scroll", { "-0.25", "true", "250" } }
 	t["<Leader>n"] = { "scroll", { "0.25", "true", "250" } }
 	t["zt"] = { "zt", { "150" } }
 	t["zz"] = { "zz", { "150" } }

@@ -2,7 +2,7 @@
 
 -- source packer on save
 vim.cmd([[
-augroup packer_user_config
+ augroup packer_user_config
  autocmd!
  autocmd BufWritePost packer.lua source <afile>
  augroup end
@@ -90,5 +90,7 @@ return require("packer").startup(function()
 	use("shaunsingh/nord.nvim")
 	use("sainnhe/everforest")
 	use("ishan9299/nvim-solarized-lua")
+	use("navarasu/onedark.nvim")
+	use("Mofiqul/dracula.nvim")
 	use("artanikin/vim-synthwave84")
 end)
