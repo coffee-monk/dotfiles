@@ -14,8 +14,8 @@ local formatting = null_ls.builtins.formatting
 -- config for format on save
 local on_attach = function(client)
 	if client.server_capabilities.documentFormattingProvider then
-		vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-		vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
+		vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.format()<CR>")
+		vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.format()")
 	end
 	if client.server_capabilities.documentRangeFormattingProvider then
 		vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
