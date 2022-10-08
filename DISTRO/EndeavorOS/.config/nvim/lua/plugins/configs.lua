@@ -95,6 +95,17 @@ end
 
 -- lualine ------------------------------------------------
 
+function searchCount()
+	local search = vim.fn.searchcount({ maxcount = 0 }) -- maxcount = 0 makes the number not be capped at 99
+	local searchCurrent = search.current
+	local searchTotal = search.total
+	if searchCurrent > 0 and vim.v.hlsearch ~= 0 then
+		return "/" .. vim.fn.getreg("/") .. " [" .. searchCurrent .. "/" .. searchTotal .. "]"
+	else
+		return ""
+	end
+end
+
 local status, lualine = pcall(require, "lualine")
 if status then
 	--
@@ -106,8 +117,7 @@ if status then
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", "diagnostics" },
-			lualine_c = {
+			lualine_b = {
 				{
 					"filename",
 					file_status = true,
@@ -120,6 +130,8 @@ if status then
 					},
 				},
 			},
+			lualine_c = { "branch", "diff", "diagnostics" },
+			lualine_x = { { searchCount }, "filetype" },
 		},
 	})
 	--
@@ -151,7 +163,7 @@ if status then
 		options = {
 			separator_style = { "" },
 			indicator = {
-				icon = { " " },
+				icon = " ",
 				style = "icon",
 			},
 			offsets = {

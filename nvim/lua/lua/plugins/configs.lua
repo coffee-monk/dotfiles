@@ -95,7 +95,8 @@ end
 
 -- lualine ------------------------------------------------
 
-function searchCount()
+-- return "/" search query results
+function SearchCount()
 	local search = vim.fn.searchcount({ maxcount = 0 }) -- maxcount = 0 makes the number not be capped at 99
 	local searchCurrent = search.current
 	local searchTotal = search.total
@@ -131,7 +132,7 @@ if status then
 				},
 			},
 			lualine_c = { "branch", "diff", "diagnostics" },
-			lualine_x = { { searchCount }, "filetype" },
+			lualine_x = { { SearchCount }, "filetype" },
 		},
 	})
 	--

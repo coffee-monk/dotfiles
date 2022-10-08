@@ -51,9 +51,9 @@ ahead = "↦  "
 behind = "↤  "
 diverged = "⇅  "
 untracked = '? '
-stashed = "$ "
 modified = '! '
 staged = '[\($count\)](#cb1ed1) '
 renamed = "» "
 deleted = "✘ "
+# stashed = "$ "
 
