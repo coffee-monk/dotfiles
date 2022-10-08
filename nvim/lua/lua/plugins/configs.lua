@@ -131,7 +131,6 @@ if status then
 				},
 			},
 			lualine_c = { "branch", "diff", "diagnostics" },
-			-- lualine_x = { "fileformat", "filetype" },
 			lualine_x = { { searchCount }, "filetype" },
 		},
 	})
