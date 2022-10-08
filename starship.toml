@@ -41,6 +41,9 @@ format = "[⬢ $version ](bold #8ae234)"
 [python]
 format = '[$symbol$pyenv_prefix$version $virtualenv](bold #acd04a) '
 
+[lua]
+format = '[Lua_$version](bold blue) '
+
 [git_branch]
 format = "[$symbol$branch](#cb1ed1) "
 
