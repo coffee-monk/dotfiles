@@ -1,26 +1,32 @@
 -- Colorschemes >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 local themes = {
+	{ "Tokyonight", "tokyonight" },
+
 	{ "Nightfox", "nightfox" },
 	{ "Nordfox", "nordfox" },
 	{ "Terafox", "terafox" },
-	{ "Tokyonight", "tokyonight" },
+	{ "DuskFox", "duskfox" },
+
 	{ "Monokai", "monokai_pro" },
 	{ "Boo", "boo" },
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
-	{ "Solarized", "solarized" },
 
-	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
-	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
-	{ "Moonlight", { theme = "moonlight", lua_loc = "lualine.themes.moonlight" } },
-	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
-	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
+	{ "Synthwave84", { theme = "synthwave84", lua_loc = "lualine.themes.synthwave84" } },
+	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
 	{ "Onedark", { theme = "onedark", lua_loc = "lualine.themes.onedark" } },
 	{ "Dracula", { theme = "dracula", lua_loc = "lualine.themes.dracula-nvim" } },
-	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.marakai_lualine" } },
+	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
+	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
+	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
+	{ "Moonlight", { theme = "moonlight", lua_loc = "lualine.themes.moonlight" } },
+
+	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.lualine_themes.marakai" } },
+	{ "Solarized", { theme = "solarized", lua_loc = "colorschemes.lualine_themes.solarized" } },
+	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
 }
 
 -- create cmds from themes (colorscheme + lualine)
@@ -34,7 +40,7 @@ end
 
 -- Remove SignColumn background + carats in StatusLine
 vim.cmd([[
-  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight StatusLineNC gui=italic
+  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight LineNr guibg=NONE | highlight StatusLineNC gui=italic
 ]])
 
 vim.o.background = "dark"
@@ -43,6 +49,11 @@ vim.o.background = "dark"
 vim.cmd([[
 let g:sonokai_style = 'andromeda'
 let g:sonokai_better_performance = 1
+]])
+
+-- Nightfly
+vim.cmd([[
+let g:nightflyWinSeparator = '2'
 ]])
 
 -- Tokyonight

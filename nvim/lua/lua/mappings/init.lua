@@ -104,7 +104,7 @@ map("v", "@", ":set relativenumber!<CR>")
 
 -- highlight all words under cursor
 map("n", "$", "*")
-map("n", "<Leader>s", "*")
+map("v", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
 
 -- search & replace: all/word under cursor/selected
 map("n", "S", ":%s///g<Left><Left><Left>", { noremap = true, silent = false })
