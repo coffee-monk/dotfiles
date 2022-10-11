@@ -104,7 +104,7 @@ map("v", "@", ":set relativenumber!<CR>")
 
 -- highlight all words under cursor
 map("n", "$", "*")
-map("n", "<Leader>s", "*")
+map("v", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
 
 -- search & replace: all/word under cursor/selected
 map("n", "S", ":%s///g<Left><Left><Left>", { noremap = true, silent = false })
@@ -241,23 +241,10 @@ local status = pcall(require, "hop")
 if status then
 	--
 	vim.cmd([[
-  map <silent> fj :lua HopWordDir('AFTER_CURSOR')<CR>
-  map <silent> fk :lua HopWordDir('BEFORE_CURSOR')<CR>
+  map <silent> fj <cmd>HopWordAC<CR>
+  map <silent> fk <cmd>HopWordBC<CR>
   map <silent> fh <cmd>HopWordMW<CR>
 ]])
-
-	function HopWordDir(direction) -- avoids error on empty space
-		if
-			pcall(function()
-				vim.cmd(
-					"lua require('hop').hint_words({ direction = require'hop.hint'.HintDirection." .. direction .. " })"
-				)
-			end, direction)
-		then
-		else
-			vim.cmd("lua require('hop').hint_words()")
-		end
-	end
 	--
 end
 

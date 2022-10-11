@@ -42,6 +42,9 @@ local settings = {
 
 	scrolloff = 0,
 	sidescrolloff = 0,
+
+  ls = 0,
+  ch = 0,
 }
 
 -- set settings for each key/value
