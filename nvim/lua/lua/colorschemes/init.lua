@@ -12,9 +12,9 @@ local themes = {
 	{ "Boo", "boo" },
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
+	{ "Synthwave84", "synthwave84" },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
-	{ "Synthwave84", { theme = "synthwave84", lua_loc = "lualine.themes.synthwave84" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
 	{ "Onedark", { theme = "onedark", lua_loc = "lualine.themes.onedark" } },
