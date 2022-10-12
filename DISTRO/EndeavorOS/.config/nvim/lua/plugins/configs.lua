@@ -134,6 +134,10 @@ if status then
 			lualine_c = { "branch", "diff", "diagnostics" },
 			lualine_x = { { SearchCount }, "filetype" },
 		},
+    inactive_sections = {
+      lualine_c = {'filename'},
+      lualine_x = {"filetype",'location'},
+    }
 	})
 	--
 end

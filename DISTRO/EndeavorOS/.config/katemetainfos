@@ -10,26 +10,26 @@ Mode Set By User=false
 Time=2022,8,14,3,9,1.8279999999999998
 URL=file:///home/mjc/Desktop/dotfiles-public/.config/nvim/lua/windows.lua
 
-[file:///home/mjc/Desktop/pacman.txt]
+[file:///run/media/mjc/EOS_202208/arch/pkglist.x86_64.txt]
 Bookmarks=
-Checksum=90e2fc19537cbc65ba2b621da2a4814d9e23f2eb
+Checksum=6e357e3c79deafc64199b8f575d41231fc8b8610
 Encoding=UTF-8
 Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
 Mode=Normal
 Mode Set By User=false
-Time=2022,7,20,23,18,51.666
-URL=file:///home/mjc/Desktop/pacman.txt
+Time=2022,8,30,22,42,35.963
+URL=file:///run/media/mjc/EOS_202208/arch/pkglist.x86_64.txt
 
-[file:///home/mjc/Desktop/test.lua]
+[file:///run/media/mjc/EOS_202208/arch/version]
 Bookmarks=
-Checksum=dfd73377f06465d958c4ca23479061a991db34f3
+Checksum=e95905c198d0c3391ffb37328337c2c571c1064e
 Encoding=UTF-8
-Highlighting=Lua
+Highlighting=None
 Highlighting Set By User=false
-Indentation Mode=lua
-Mode=Lua
+Indentation Mode=normal
+Mode=Normal
 Mode Set By User=false
-Time=2022,7,20,23,41,54.191
-URL=file:///home/mjc/Desktop/test.lua
+Time=2022,8,30,22,43,40.791
+URL=file:///run/media/mjc/EOS_202208/arch/version

@@ -129,6 +129,7 @@ Dialog Size=600,480
 [Shortcuts]
 Activate Next Tab=Ctrl+]
 Activate Previous Tab=Ctrl+[
+BeginningOfLine=
 Close=Ctrl+W
 Next=
 Prior=

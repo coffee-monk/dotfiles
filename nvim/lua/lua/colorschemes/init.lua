@@ -13,6 +13,7 @@ local themes = {
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
 	{ "Synthwave84", "synthwave84" },
+	{ "XCode", "xcode" },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },

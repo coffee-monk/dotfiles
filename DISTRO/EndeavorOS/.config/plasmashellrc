@@ -3,9 +3,6 @@ Recent Files[$e]=Ed.png,file:$HOME/Desktop/dotfiles/images/workspace-images/ed1.
 Recent URLs[$e]=file:$HOME/Desktop/dotfiles/images/start-icon/,file:$HOME/,file:$HOME/Desktop/dotfiles/images/workspace-images/
 detailViewIconSize=16
 
-[PlasmaTransientsConfig]
-PreloadWeight=42
-
 [PlasmaViews][Panel 2][Defaults]
 thickness=44
 

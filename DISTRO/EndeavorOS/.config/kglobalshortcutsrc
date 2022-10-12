@@ -23,6 +23,7 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
+{388d0bf2-61dc-45ec-a22f-9b00212a20e0}=Home,none,Screenshot-region
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 
 [kitty.desktop]
@@ -223,7 +224,7 @@ ActiveWindowScreenShot=none,Meta+Print,Capture Active Window
 CurrentMonitorScreenShot=Meta+Print,none,Capture Current Monitor
 FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
 OpenWithoutScreenshot=none,none,Launch Spectacle without capturing
-RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
+RectangularRegionScreenShot=none,Meta+Shift+Print,Capture Rectangular Region
 WindowUnderCursorScreenShot=Meta+Ctrl+Print,Meta+Ctrl+Print,Capture Window Under Cursor
 _k_friendly_name=Spectacle
 _launch=none,Print,Launch Spectacle

@@ -7,20 +7,22 @@ local themes = {
 	{ "Nordfox", "nordfox" },
 	{ "Terafox", "terafox" },
 	{ "DuskFox", "duskfox" },
+	{ "Dayfox", "dayfox" },
 
 	{ "Monokai", "monokai_pro" },
 	{ "Boo", "boo" },
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
+	{ "Melange", "melange" },
+	{ "Synthwave84", "synthwave84" },
+	{ "XCode", "xcode" },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
-	{ "Synthwave84", { theme = "synthwave84", lua_loc = "lualine.themes.synthwave84" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
 	{ "Onedark", { theme = "onedark", lua_loc = "lualine.themes.onedark" } },
 	{ "Dracula", { theme = "dracula", lua_loc = "lualine.themes.dracula-nvim" } },
 	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
-	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
 	{ "Moonlight", { theme = "moonlight", lua_loc = "lualine.themes.moonlight" } },
 
@@ -40,10 +42,10 @@ end
 
 -- Remove SignColumn background + carats in StatusLine
 vim.cmd([[
-  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight LineNr guibg=NONE | highlight StatusLineNC gui=italic
+  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight LineNr guibg=NONE | highlight StatusLineNC gui=italic | set background=dark
 ]])
 
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 
 -- Sonokai
 vim.cmd([[

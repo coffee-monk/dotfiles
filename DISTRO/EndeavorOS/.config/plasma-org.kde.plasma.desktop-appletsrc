@@ -64,7 +64,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][22][Applets][37][Configuration]
-PreloadWeight=55
+PreloadWeight=70
 
 [Containments][22][Applets][37][Configuration][Appearance]
 dateDisplayFormat=BesideTime
@@ -117,11 +117,14 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][28][Applets][32][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][28][Applets][33]
 immutability=1
 plugin=org.kde.kdeconnect
+
+[Containments][28][Applets][33][Configuration]
+PreloadWeight=65
 
 [Containments][28][Applets][34]
 immutability=1
@@ -132,7 +135,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][28][Applets][35][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 
 [Containments][28][Applets][36]
 immutability=1
@@ -143,7 +146,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][28][Applets][39][Configuration]
-PreloadWeight=60
+PreloadWeight=80
 
 [Containments][28][Applets][40]
 immutability=1
@@ -173,6 +176,8 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][43]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
 activityId=d24d5968-6f0d-4a0f-bd66-1a63fee4100d
 formfactor=0
 immutability=1
@@ -191,12 +196,12 @@ ToolBoxButtonX=576
 iconSize=2
 
 [Containments][43][Wallpaper][org.kde.image][General]
-Image=/home/mjc/Desktop/dotfiles/images/workspace-images/ed1.jpg
+Image=file:///home/mjc/Desktop/dotfiles/images/workspace-images/ed1.jpg
 SlidePaths=/home/mjc/.local/share/wallpapers,/usr/share/wallpapers
 
 [Containments22Appletsts][25][Configuration][General]
 launchers=applications:org.kde.discover.desktop,applications:systemsettings.desktop,preferred://filemanager,preferred://browser
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,d24d5968-6f0d-4a0f-bd66-1a63fee4100d,11,desktop:/dotfiles-public,desktop:/fonts,desktop:/Neovim-from-scratch,desktop:/index.html,desktop:/test.ts,desktop:/dotfiles,desktop:/pacman.txt,desktop:/vimlog,desktop:/scribitz-website,desktop:/test-project,desktop:/nvim_scripts.txt
+itemsOnDisabledScreens=0,d24d5968-6f0d-4a0f-bd66-1a63fee4100d,11,desktop:/dotfiles-public,desktop:/fonts,desktop:/Neovim-from-scratch,desktop:/index.html,desktop:/test.ts,desktop:/dotfiles,desktop:/pacman.txt,desktop:/vimlog,desktop:/scribitz-website,desktop:/test-project,desktop:/nvim_scripts.txt,1,d24d5968-6f0d-4a0f-bd66-1a63fee4100d,2,desktop:/ElectronJS,desktop:/storage-files
 screenMapping=

@@ -1,7 +1,7 @@
 local M = {}
 
--- Sign column signs
 M.setup = function()
+	-- Sign column signs
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -62,7 +62,7 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "&", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
@@ -91,14 +91,14 @@ M.on_attach = function(client, bufnr)
 	lsp_highlight_document(client)
 end
 
--- Get unique server capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 -- Check completions setup status
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
+
+-- Get unique server capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Attach capabilities to handler export
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
