@@ -13,7 +13,8 @@ local themes = {
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
 	{ "Synthwave84", "synthwave84" },
-	{ "XCode", "xcode" },
+
+	{ "XCode", { theme = "xcode", lua_loc = "colorschemes.lualine_themes.xcode" } },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
@@ -27,6 +28,7 @@ local themes = {
 
 	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.lualine_themes.marakai" } },
 	{ "Solarized", { theme = "solarized", lua_loc = "colorschemes.lualine_themes.solarized" } },
+	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
 	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
 }
 
