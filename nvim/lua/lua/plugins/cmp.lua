@@ -63,7 +63,7 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.confirm({ select = true })
+				cmp.confirm({ select = false }) -- bool -> auto-select 1st option
 			else
 				fallback()
 			end
