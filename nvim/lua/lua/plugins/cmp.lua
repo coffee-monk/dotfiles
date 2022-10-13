@@ -62,11 +62,16 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.confirm({ select = true })
+			else
+				fallback()
+			end
+		end),
+		["<S-CR>"] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
 				cmp.confirm()
-				luasnip.jump(1)
-			elseif cmp.visible() then
-				cmp.confirm({ select = true })
+        luasnip.jump(1)
 			else
 				fallback()
 			end

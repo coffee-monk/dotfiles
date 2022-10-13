@@ -43,10 +43,8 @@ end
 
 -- Remove SignColumn background + carats in StatusLine
 vim.cmd([[
-  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight LineNr guibg=NONE | highlight StatusLineNC gui=italic
+  autocmd Colorscheme * highlight SignColumn guibg=NONE | highlight StatusLine gui=bold | highlight LineNr guibg=NONE | highlight StatusLineNC gui=italic | set background=dark
 ]])
-
-vim.o.background = "dark"
 
 -- Sonokai
 vim.cmd([[
