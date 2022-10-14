@@ -34,6 +34,7 @@ map("n", "<ESC>", ":noh<CR>")
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
 map("n", "<S-CR>", "O<ESC>")
+map("n", "<Leader><CR>", "O<ESC>")
 
 -- break line at character
 map("n", "K", "i<CR><ESC>")
