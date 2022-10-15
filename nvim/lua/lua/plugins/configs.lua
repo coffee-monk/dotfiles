@@ -134,10 +134,10 @@ if status then
 			lualine_c = { "branch", "diff", "diagnostics" },
 			lualine_x = { { SearchCount }, "filetype" },
 		},
-    inactive_sections = {
-      lualine_c = {'filename'},
-      lualine_x = {"filetype",'location'},
-    }
+		inactive_sections = {
+			lualine_c = { "filename" },
+			lualine_x = { "filetype", "location" },
+		},
 	})
 	--
 end
@@ -246,8 +246,6 @@ if status then
 	-- Syntax: t[keys] = {function, {function arguments}}
 	t["+"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
 	t["_"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
-	t["<Leader>o"] = { "scroll", { "-0.25", "true", "250" } }
-	t["<Leader>n"] = { "scroll", { "0.25", "true", "250" } }
 	t["zt"] = { "zt", { "150" } }
 	t["zz"] = { "zz", { "150" } }
 	t["zb"] = { "zb", { "150" } }
@@ -257,6 +255,15 @@ if status then
 	require("neoscroll.config").set_mappings(t)
 	--
 end
+
+-- arpeggio scroll
+pcall(
+	vim.cmd,
+	[[
+    call arpeggio#map('n','s','0','jk',":lua require('neoscroll').scroll(0.25, true, 250)<CR>")
+    call arpeggio#map('n','s','0','kl',":lua require('neoscroll').scroll(-0.25, true, 250)<CR>")
+  ]]
+)
 
 -- vim-extended-ft ----------------------------------------
 
