@@ -10,7 +10,7 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/plugins/l
 -- Config -------------------------------------------------
 
 luasnip.config.set_config({
-	history = true,
+	history = false,
 	update_events = "TextChanged,TextChangedI",
 	delete_check_events = "TextChanged",
 	ext_base_prio = 300,
