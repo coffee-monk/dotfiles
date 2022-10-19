@@ -296,7 +296,7 @@ pcall(
 	[[
     "visual select to beginning/end of paragraph
     call arpeggio#map('n','s','0','sj',":call QuickMove_Down('n')<CR>")
-    call arpeggio#map('v','s','0','sj',":call QuickMove_Down('v')<CR>")
+    call arpeggio#map('v','s','0','sj',":call QuickMove_Down('x')<CR>")
     call arpeggio#map('n','s','0','sk',"V{w")
     call arpeggio#map('v','s','0','sk',"{{wwb")
 

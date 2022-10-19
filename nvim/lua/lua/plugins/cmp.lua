@@ -53,6 +53,7 @@ local icons = {
 local aliases = {
 	nvim_lsp = "lsp",
 	luasnip = "snippet",
+	cmp_tabnine = "tabnine",
 }
 
 -- Main Configuration -------------------------------------
