@@ -10,13 +10,13 @@ end
 vim.g.mapleader = " "
 map("n", "<SPACE>", "<Nop>") -- unmap <SPACE>
 map("n", "ss", "<Nop>") -- unmap ss to hold key
-map("v", "ss", "<Nop>") -- unmap ss to hold key
+map("x", "ss", "<Nop>") -- unmap ss to hold key
 
 -- STANDARD KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 -- semicolon as colon
 map("n", ";", ":", { noremap = true, silent = false })
-map("v", ";", ":<BS><BS><BS><BS><BS>", { noremap = true, silent = false })
+map("x", ";", ":<BS><BS><BS><BS><BS>", { noremap = true, silent = false })
 
 -- manual lookup of key under cursor
 map("n", "0", "K")
@@ -26,7 +26,7 @@ map("n", "<Leader><Leader>f", "g<C-g>")
 
 -- capitalization toggle
 map("n", "`", "~h")
-map("v", "`", "~")
+map("x", "`", "~")
 
 -- exit search highlight
 map("n", "<ESC>", ":noh<CR>")
@@ -34,7 +34,6 @@ map("n", "<ESC>", ":noh<CR>")
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
 map("n", "<S-CR>", "O<ESC>")
-map("n", "<Leader><CR>", "O<ESC>")
 
 -- break line at character
 map("n", "K", "i<CR><ESC>")
@@ -49,20 +48,20 @@ map("n", "X", "xh")
 map("n", "Y", "y$")
 
 -- paste over text & keep original clipboard val
-map("v", "p", '"_dP')
+map("x", "p", '"_dP')
 
 -- move lines/sections up & down
 map("n", "<A-j>", ":m .+1<CR>")
 map("n", "<A-k>", ":m .-2<CR>")
-map("v", "<A-j>", ":m '>+1<CR>gv=gv")
-map("v", "<A-k>", ":m '<-2<CR>gv=gv")
+map("x", "<A-j>", ":m '>+1<CR>gv=gv")
+map("x", "<A-k>", ":m '<-2<CR>gv=gv")
 
 -- remap go to column #
 map("n", "<Leader><BAR>", "<BAR>")
 
 -- go to matching paranthesis
 map("n", "#", "%")
-map("v", "#", "%")
+map("x", "#", "%")
 
 -- swap left/right paragraph motion
 map("n", "{", "}")
@@ -71,14 +70,14 @@ map("n", "}", "{")
 -- custom paragraph motion
 map("n", "=", "{{wwb")
 map("n", "-", "}}{wwb")
-map("v", "=", "{{wwb")
-map("v", "-", "}}{wwb")
+map("x", "=", "{{wwb")
+map("x", "-", "}}{wwb")
 
 -- go to line start/end
 map("n", "H", "^")
 map("n", "L", "$")
-map("v", "H", "^")
-map("v", "L", "$")
+map("x", "H", "^")
+map("x", "L", "$")
 
 -- save & quit
 map("n", "<C-s>", ":w!<CR>")
@@ -90,7 +89,7 @@ map("n", "Q", ":q<CR>")
 map("n", "<C-a>", "ggVG")
 
 -- invert lines vertically
-map("v", "<Leader>v", "!tac<CR>")
+map("x", "<Leader>v", "!tac<CR>")
 
 -- backspace delete character
 map("n", "<BS>", "hx")
@@ -104,16 +103,16 @@ map("n", "U", "<C-r>")
 
 -- toggle relative mode for line numbers
 map("n", "@", ":set relativenumber!<CR>")
-map("v", "@", ":set relativenumber!<CR>")
+map("x", "@", ":set relativenumber!<CR>")
 
 -- highlight all words under cursor
 map("n", "$", "*")
-map("v", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
+map("x", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
 
 -- search & replace: all/word under cursor/selected
 map("n", "S", ":%s///g<Left><Left><Left>", { noremap = true, silent = false })
 map("n", "<Leader>S", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", { noremap = true, silent = false })
-map("v", "S", '"hy:%s/<C-r>h//g<Left><Left>', { noremap = true, silent = false })
+map("x", "S", '"hy:%s/<C-r>h//g<Left><Left>', { noremap = true, silent = false })
 
 -- Windows ------------------------------------------------
 
@@ -155,8 +154,8 @@ map("n", "(", "gT")
 -- tab-indentation
 map("n", ">", "V>gv<ESC>")
 map("n", "<", "V<gv<ESC>")
-map("v", ">", ">gv")
-map("v", "<", "<gv")
+map("x", ">", ">gv")
+map("x", "<", "<gv")
 
 -- delete all marks
 map("n", "M", ":wshada!<CR>", { noremap = true, silent = false })
@@ -164,7 +163,8 @@ map("n", "M", ":wshada!<CR>", { noremap = true, silent = false })
 -- reload vim with saved settings
 map("n", "<Leader>\\", ":source<CR>")
 
--- command mode wildmenu
+-- COMMAND MODE WILDMENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 vim.cmd([[
 set wildcharm=<C-Z>
 "navigation (next/prev)
@@ -194,13 +194,13 @@ vim.cmd([[
     if empty_below == 1
       if mode == "n"
         :exe "normal V}}{wwb"
-      elseif mode == "v"
+      elseif mode == "x"
         :exe "normal gv}}{wwb"
       endif
     else
       if mode == "n"
         :exe "normal V}ge^"
-      elseif mode == "v"
+      elseif mode == "x"
         :exe "normal gv}ge"
       endif
     endif
@@ -233,9 +233,9 @@ local status = pcall(require, "nvim_comment")
 if status then
 	--
 	map("n", "<C-/>", ":CommentToggle<CR>")
-	map("v", "<C-/>", [[:'<, '>CommentToggle<CR>]])
+	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
-	map("v", "<C-_>", [[:'<, '>CommentToggle<CR>]])
+	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>]])
 	--
 end
 
