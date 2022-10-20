@@ -296,21 +296,21 @@ pcall(
 	[[
     "visual select to beginning/end of paragraph
     call arpeggio#map('n','s','0','sj',":call QuickMove_Down('n')<CR>")
-    call arpeggio#map('v','s','0','sj',":call QuickMove_Down('x')<CR>")
+    call arpeggio#map('x','s','0','sj',":call QuickMove_Down('x')<CR>")
     call arpeggio#map('n','s','0','sk',"V{w")
-    call arpeggio#map('v','s','0','sk',"{{wwb")
+    call arpeggio#map('x','s','0','sk',"{{wwb")
 
     "visual select to next/previous paragraph
     call arpeggio#map('n','s','0','sn','V}}{wwb')
     call arpeggio#map('n','s','0','so','V{{wwb')
-    call arpeggio#map('v','s','0','sn','}}{wwb')
-    call arpeggio#map('v','s','0','so','{{wwb}ge^')
+    call arpeggio#map('x','s','0','sn','}}{wwb')
+    call arpeggio#map('x','s','0','so','{{wwb}ge^')
 
     "visual select to beginning/end of line
     call arpeggio#map('n','s','0','sl','v$h')
     call arpeggio#map('n','s','0','sh','v^')
-    call arpeggio#map('v','s','0','sl','v$h')
+    call arpeggio#map('x','s','0','sl','v$h')
 
-    pall arpeggio#map('v','s','0','sh','v^')
+    pall arpeggio#map('x','s','0','sh','v^')
   ]]
 )
