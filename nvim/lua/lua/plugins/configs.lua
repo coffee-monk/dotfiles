@@ -248,6 +248,8 @@ if status then
 	})
 	local t = {}
 	-- Syntax: t[keys] = {function, {function arguments}}
+	t["<A-=>"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
+	t["<A-->"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
 	t["+"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
 	t["_"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
 	t["zt"] = { "zt", { "150" } }
