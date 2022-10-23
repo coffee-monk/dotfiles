@@ -9,7 +9,6 @@ end
 -- leader key
 vim.g.mapleader = " "
 map("n", "<SPACE>", "<Nop>") -- unmap <SPACE>
-map("n", "ss", "<Nop>") -- unmap ss to hold key
 map("x", "ss", "<Nop>") -- unmap ss to hold key
 
 -- STANDARD KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -28,8 +27,8 @@ map("n", "<Leader><Leader>f", "g<C-g>")
 map("n", "`", "~h")
 map("x", "`", "~")
 
--- exit search highlight
-map("n", "<ESC>", ":noh<CR>")
+-- exit search highlight + exit lsp window
+map("n", "<ESC>", ":noh<CR>jk")
 
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
