@@ -33,10 +33,10 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-    commit = "ffd4525fd9e61950520cea4737abc1800ad4aabb",
-		-- run = function()
-		-- 	require("nvim-treesitter.install").update({ with_sync = true })
-		-- end,
+    -- commit = "ffd4525fd9e61950520cea4737abc1800ad4aabb",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
 	})
 	use("nvim-treesitter/playground")
 	use("p00f/nvim-ts-rainbow")
@@ -91,7 +91,7 @@ return require("packer").startup(function()
 	use("shaunsingh/nord.nvim")
 	use("sainnhe/everforest")
 	use("ishan9299/nvim-solarized-lua")
-	use("navarasu/onedark.nvim")
+	-- use("navarasu/onedark.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("artanikin/vim-synthwave84")
 	use("bluz71/vim-nightfly-guicolors")
