@@ -33,7 +33,7 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-    -- commit = "ffd4525fd9e61950520cea4737abc1800ad4aabb",
+		-- commit = "ffd4525fd9e61950520cea4737abc1800ad4aabb",
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
@@ -73,6 +73,7 @@ return require("packer").startup(function()
 	use("terrortylor/nvim-comment")
 	use("mg979/vim-visual-multi")
 	use("svermeulen/vim-extended-ft")
+	use("fedepujol/move.nvim")
 
 	-- Colorschemes
 	use({ "Everblush/everblush.nvim", as = "everblush" })
@@ -91,9 +92,9 @@ return require("packer").startup(function()
 	use("shaunsingh/nord.nvim")
 	use("sainnhe/everforest")
 	use("ishan9299/nvim-solarized-lua")
-	-- use("navarasu/onedark.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("artanikin/vim-synthwave84")
 	use("bluz71/vim-nightfly-guicolors")
 	use("JaySandhu/xcode-vim")
+  -- use("navarasu/onedark.nvim")
 end)

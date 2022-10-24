@@ -49,12 +49,6 @@ map("n", "Y", "y$")
 -- paste over text & keep original clipboard val
 map("x", "p", '"_dP')
 
--- move lines/sections up & down
-map("n", "<A-j>", ":m .+1<CR>")
-map("n", "<A-k>", ":m .-2<CR>")
-map("x", "<A-j>", ":m '>+1<CR>gv=gv")
-map("x", "<A-k>", ":m '<-2<CR>gv=gv")
-
 -- remap go to column #
 map("n", "<Leader><BAR>", "<BAR>")
 
@@ -65,6 +59,8 @@ map("x", "#", "%")
 -- swap left/right paragraph motion
 map("n", "{", "}")
 map("n", "}", "{")
+map("v", "{", "}")
+map("v", "}", "{")
 
 -- custom paragraph motion
 map("n", "=", "{{wwb")
@@ -192,15 +188,15 @@ vim.cmd([[
 
     if empty_below == 1
       if mode == "n"
-        :exe "normal V}}{wwb"
+        :exe "normal V{{}wwb"
       elseif mode == "x"
-        :exe "normal gv}}{wwb"
+        :exe "normal gv{{}wwb"
       endif
     else
       if mode == "n"
-        :exe "normal V}ge^"
+        :exe "normal V{ge^"
       elseif mode == "x"
-        :exe "normal gv}ge"
+        :exe "normal gv{ge"
       endif
     endif
   endfunction
@@ -235,6 +231,24 @@ if status then
 	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
 	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>]])
+	--
+end
+
+-- move.nvim ----------------------------------------------
+
+local status = pcall(require, "move")
+if status then
+	--
+	map("n", "<A-j>", ":MoveLine(1)<CR>") -- move line up/down
+	map("n", "<A-k>", ":MoveLine(-1)<CR>")
+	map("n", "<A-h>", ":MoveHChar(-1)<CR>") -- move char left/right
+	map("n", "<A-l>", ":MoveHChar(1)<CR>")
+	--
+	map("v", "<A-j>", ":MoveBlock(1)<CR>") -- move block up/down
+	map("v", "<A-k>", ":MoveBlock(-1)<CR>")
+	map("v", "<A-h>", ":MoveHBlock(-1)<CR>") -- move block left/right
+	map("v", "<A-l>", ":MoveHBlock(1)<CR>")
+
 	--
 end
 

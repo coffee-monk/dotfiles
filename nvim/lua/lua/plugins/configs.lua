@@ -53,6 +53,15 @@ if status then
 	--
 end
 
+-- move.nvim ----------------------------------------------
+
+local status, move = pcall(require, "move.nvim")
+if status then
+	--
+	move.setup()
+	--
+end
+
 -- surround -----------------------------------------------
 
 local status, surround = pcall(require, "surround")
