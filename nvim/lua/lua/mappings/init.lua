@@ -17,8 +17,8 @@ map("x", "ss", "<Nop>") -- unmap ss to hold key
 map("n", ";", ":", { noremap = true, silent = false })
 map("x", ";", ":<BS><BS><BS><BS><BS>", { noremap = true, silent = false })
 
--- manual lookup of key under cursor
-map("n", "0", "K")
+-- -- manual lookup of key under cursor
+-- map("n", "0", "K")
 
 -- word/char/line count
 map("n", "<Leader><Leader>f", "g<C-g>")
@@ -33,6 +33,7 @@ map("n", "<ESC>", ":noh<CR>jk")
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
 map("n", "<S-CR>", "O<ESC>")
+map("n", "<Leader><CR>", "O<ESC>")
 
 -- break line at character
 map("n", "K", "i<CR><ESC>")
@@ -152,9 +153,6 @@ map("n", "<", "V<gv<ESC>")
 map("x", ">", ">gv")
 map("x", "<", "<gv")
 
--- delete all marks
-map("n", "M", ":wshada!<CR>", { noremap = true, silent = false })
-
 -- reload vim with saved settings
 map("n", "<Leader>\\", ":source<CR>")
 
@@ -215,10 +213,10 @@ end
 
 -- nvim-tree ----------------------------------------------
 
-local status = pcall(require, "nvim-tree")
+local status, nvim_tree = pcall(require, "nvim-tree")
 if status then
 	--
-	map("n", "\\", ":NvimTreeToggle<CR>")
+  map("n", "\\", ":NvimTreeToggle<CR>")
 	--
 end
 
@@ -228,9 +226,9 @@ local status = pcall(require, "nvim_comment")
 if status then
 	--
 	map("n", "<C-/>", ":CommentToggle<CR>")
-	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>]])
+	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>gv]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
-	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>]])
+	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>gv]])
 	--
 end
 
@@ -263,6 +261,32 @@ if status then
   map <silent> fh <cmd>HopWordMW<CR>
 ]])
 	--
+end
+
+-- codewindow ----------------------------------------------
+
+local status, codewindow = pcall(require, "codewindow")
+if status then
+	--
+	map("n", "|", function () codewindow.toggle_minimap() end)
+	--
+end
+
+-- marks --------------------------------------------------
+
+local status, marks = pcall(require, "marks")
+if status then
+	--
+  marks.setup({
+    mappings = {
+      next = "gm",
+      prev = "gM",
+      preview = "M",
+      next_bookmark = "0",
+    }
+  })
+	--
+	map("n", "M<CR>", '<ESC>')
 end
 
 -- telescope ----------------------------------------------

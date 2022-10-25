@@ -12,6 +12,7 @@ configs.setup({
 	},
 	rainbow = { -- rainbow parentheses
 		enable = true,
+		disable = { "html" },
 		extended_mode = false, -- highlight non-bracket delimiters like html tags etc
 		colors = {
 			"#FFFF00",

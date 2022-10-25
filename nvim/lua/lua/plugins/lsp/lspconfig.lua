@@ -6,7 +6,7 @@ local lsp_installer = require("nvim-lsp-installer")
 
 -- Setup Configurations -----------------------------------
 
-local servers = { "sumneko_lua", "emmet_ls", "tsserver" }
+local servers = { "sumneko_lua", "tsserver" }
 
 -- nvim-lsp-installer
 lsp_installer.setup({

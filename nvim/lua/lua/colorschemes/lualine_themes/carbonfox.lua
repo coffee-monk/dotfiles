@@ -1,15 +1,15 @@
 local colors = {
-	black = "#000C15",
-	white = "#C3CCDC",
-	red = "#F68B6C",
-	green = "#ADDA66",
-	blue = "#7FDACA",
-	yellow = "#FECA8A",
-	gray = "#4B6479",
-	darkgray = "#3c3836",
-	lightgray = "#777777",
+	black = "#0C0C0C",
+	white = "#F2F4F8",
+	red = "#EE5396",
+	green = "#25BE6A",
+	blue = "#33B1FF",
+	yellow = "#D19A66",
+	gray = "#7B7C7E",
+	darkgray = "#353535",
+	lightgray = "#B6B8BB",
 	inactivegray = "#7c6f64",
-	purple = "#C691E9",
+	purple = "#BE95FF",
 }
 
 return {
@@ -44,3 +44,4 @@ return {
 		c = { bg = colors.black, fg = colors.gray },
 	},
 }
+

@@ -1,5 +1,3 @@
--- Marakai Lualine Theme >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 local colors = {
 	black = "#000001",
 	white = "#ebdbb2",

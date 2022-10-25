@@ -9,7 +9,6 @@ local themes = {
 	{ "DuskFox", "duskfox" },
 
 	{ "Monokai", "monokai_pro" },
-	{ "Boo", "boo" },
 	{ "Jellybeans", "jellybeans-nvim" },
 	{ "Sonokai", "sonokai" },
 	{ "Synthwave84", "synthwave84" },
@@ -19,17 +18,18 @@ local themes = {
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
-	{ "Onedark", { theme = "onedark", lua_loc = "lualine.themes.onedark" } },
 	{ "Dracula", { theme = "dracula", lua_loc = "lualine.themes.dracula-nvim" } },
 	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
 	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
-	{ "Moonlight", { theme = "moonlight", lua_loc = "lualine.themes.moonlight" } },
 
 	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.lualine_themes.marakai" } },
+	{ "Carbonfox", { theme = "carbonfox", lua_loc = "colorschemes.lualine_themes.carbonfox" } },
 	{ "Solarized", { theme = "solarized", lua_loc = "colorschemes.lualine_themes.solarized" } },
 	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
-	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
+  { "Onedark", { theme = "onedark", lua_loc = "colorschemes.lualine_themes.onedark" } },
+  { "Boo", { theme = "boo", lua_loc = "colorschemes.lualine_themes.boo" } },
+	{ "Moonlight", { theme = "moonlight", lua_loc = "colorschemes.lualine_themes.moonlight" } },
 }
 
 -- create cmds from themes (colorscheme + lualine)

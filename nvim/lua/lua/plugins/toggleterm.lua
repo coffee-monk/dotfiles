@@ -9,20 +9,23 @@ toggleterm.setup({
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = 2,
+	shading_factor = 1,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "float",
-	-- direction = "horizontal",
 	close_on_exit = true,
 	shell = vim.o.shell,
+	direction = "float", -- "vertical", "float", "horizontal", "tab"
 	float_opts = {
-		border = "curved",
-		winblend = 0,
-		highlights = {
-			border = "Normal",
-			background = "Normal",
+		border = "single", -- "single", "double", "shadow", "curved"
+		winblend = 5,
+		width = 1000,
+		height = 1000,
+	},
+	highlights = {
+		FloatBorder = {
+			guifg = "#B8C1EB",
+			guibg = "none",
 		},
 	},
 })

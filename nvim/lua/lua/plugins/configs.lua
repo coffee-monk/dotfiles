@@ -42,14 +42,27 @@ if status then
 	scrollbar.setup()
 end
 
+-- codewindow ---------------------------------------------
+
+local status, codewindow = pcall(require, "codewindow")
+if status then
+	codewindow.setup({
+		width_multiplier = 5,
+		minimap_width = 12,
+		exclude_filetypes = { "NvimTree" },
+		use_lsp = true,
+		use_treesitter = false,
+		window_border = "none",
+	})
+	--
+end
+
 -- nvim-comment -------------------------------------------
 
 local status, nvim_comment = pcall(require, "nvim_comment")
 if status then
 	--
-	nvim_comment.setup({
-		line_mapping = "<C-_>", -- <C-_> stands in for <C-/>
-	})
+	nvim_comment.setup()
 	--
 end
 
@@ -57,9 +70,7 @@ end
 
 local status, move = pcall(require, "move.nvim")
 if status then
-	--
 	move.setup()
-	--
 end
 
 -- surround -----------------------------------------------
@@ -91,10 +102,9 @@ if status then
 		filters = {
 			dotfiles = true,
 		},
-    git = {
-      ignore = false,
-
-    },
+		git = {
+			ignore = false,
+		},
 		actions = {
 			open_file = {
 				window_picker = {
@@ -163,6 +173,7 @@ if status then
 	local function maximize_status()
 		return vim.t.maximized and " " or ""
 	end
+	--
 	pcall(
 		require("lualine").setup({
 			sections = { lualine_a = { "mode", maximize_status } },
@@ -197,6 +208,12 @@ if status then
 	--
 end
 
+-- emmet-vim ----------------------------------------------
+
+vim.cmd([[
+  let g:user_emmet_leader_key=','
+]])
+
 -- fzf-lua ------------------------------------------------
 
 local opts = { noremap = true, silent = true }
@@ -217,7 +234,7 @@ if status then
 			},
 		},
 		grep = {
-			input_prompt = "GREP: ",
+			input_prompt = "GREP => ",
 		},
 	})
 	--
@@ -271,7 +288,6 @@ if status then
 	--
 end
 
--- arpeggio scroll
 pcall(
 	vim.cmd,
 	[[

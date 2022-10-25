@@ -1,4 +1,4 @@
--- Marakai Lualine Theme >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- Solarized Lualine Theme >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 local colors = {
 	black = "#00232b",

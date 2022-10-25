@@ -1,15 +1,15 @@
 local colors = {
-	black = "#000C15",
-	white = "#C3CCDC",
-	red = "#F68B6C",
-	green = "#ADDA66",
-	blue = "#7FDACA",
-	yellow = "#FECA8A",
-	gray = "#4B6479",
+	black = "#21252B",
+	white = "#E5D1D1",
+	red = "#E06C75",
+	green = "#98C379",
+	blue = "#61AFEF",
+	yellow = "#D19A66",
+	gray = "#5C6370",
 	darkgray = "#3c3836",
 	lightgray = "#777777",
 	inactivegray = "#7c6f64",
-	purple = "#C691E9",
+	purple = "#C678DD",
 }
 
 return {
