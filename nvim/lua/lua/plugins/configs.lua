@@ -154,12 +154,12 @@ if status then
 					},
 				},
 			},
-			lualine_c = { "branch", "diff", "diagnostics" },
-			lualine_x = { { SearchCount }, "filetype" },
+			lualine_c = {},
+			lualine_x = { { SearchCount }, "diff", "diagnostics", "branch", "filetype" },
 		},
 		inactive_sections = {
 			lualine_c = { "filename" },
-			lualine_x = { "filetype", "location" },
+			lualine_x = { "branch", "filetype", "location" },
 		},
 	})
 	--
