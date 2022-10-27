@@ -212,6 +212,7 @@ end
 
 vim.cmd([[
   let g:user_emmet_leader_key=','
+  let g:user_emmet_next_key='<S-CR>'
 ]])
 
 -- fzf-lua ------------------------------------------------
