@@ -102,8 +102,12 @@ map("n", "@", ":set relativenumber!<CR>")
 map("x", "@", ":set relativenumber!<CR>")
 
 -- highlight all words under cursor
-map("n", "$", "*")
-map("x", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
+map("n", "gn", "*")
+map("x", "gn", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
+
+-- highlight until last highlighted word
+map("n", "$", "gn")
+map("x", "$", "gn")
 
 -- search & replace: all/word under cursor/selected
 map("n", "S", ":%s///g<Left><Left><Left>", { noremap = true, silent = false })
@@ -216,7 +220,7 @@ end
 local status, nvim_tree = pcall(require, "nvim-tree")
 if status then
 	--
-  map("n", "\\", ":NvimTreeToggle<CR>")
+	map("n", "\\", ":NvimTreeToggle<CR>")
 	--
 end
 
@@ -268,7 +272,9 @@ end
 local status, codewindow = pcall(require, "codewindow")
 if status then
 	--
-	map("n", "|", function () codewindow.toggle_minimap() end)
+	map("n", "|", function()
+		codewindow.toggle_minimap()
+	end)
 	--
 end
 
@@ -277,16 +283,16 @@ end
 local status, marks = pcall(require, "marks")
 if status then
 	--
-  marks.setup({
-    mappings = {
-      next = "gm",
-      prev = "gM",
-      preview = "M",
-      next_bookmark = "0",
-    }
-  })
+	marks.setup({
+		mappings = {
+			next = "gm",
+			prev = "gM",
+			preview = "M",
+			next_bookmark = "0",
+		},
+	})
 	--
-	map("n", "M<CR>", '<ESC>')
+	map("n", "M<CR>", "<ESC>")
 end
 
 -- telescope ----------------------------------------------

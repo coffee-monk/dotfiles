@@ -13,7 +13,6 @@ local themes = {
 	{ "Sonokai", "sonokai" },
 	{ "Synthwave84", "synthwave84" },
 
-	{ "XCode", { theme = "xcode", lua_loc = "colorschemes.lualine_themes.xcode" } },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
@@ -22,14 +21,16 @@ local themes = {
 	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
 	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
+	{ "NeoSolarized", { theme = "NeoSolarized", lua_loc = "lualine.themes.NeoSolarized" } },
 
 	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.lualine_themes.marakai" } },
 	{ "Carbonfox", { theme = "carbonfox", lua_loc = "colorschemes.lualine_themes.carbonfox" } },
 	{ "Solarized", { theme = "solarized", lua_loc = "colorschemes.lualine_themes.solarized" } },
 	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
-  { "Onedark", { theme = "onedark", lua_loc = "colorschemes.lualine_themes.onedark" } },
-  { "Boo", { theme = "boo", lua_loc = "colorschemes.lualine_themes.boo" } },
+	{ "Onedark", { theme = "onedark", lua_loc = "colorschemes.lualine_themes.onedark" } },
+	{ "Boo", { theme = "boo", lua_loc = "colorschemes.lualine_themes.boo" } },
 	{ "Moonlight", { theme = "moonlight", lua_loc = "colorschemes.lualine_themes.moonlight" } },
+  { "XCode", { theme = "xcode", lua_loc = "colorschemes.lualine_themes.xcode" } },
 }
 
 -- create cmds from themes (colorscheme + lualine)
@@ -48,13 +49,13 @@ vim.cmd([[
 
 -- Sonokai
 vim.cmd([[
-let g:sonokai_style = 'andromeda'
-let g:sonokai_better_performance = 1
+  let g:sonokai_style = 'andromeda'
+  let g:sonokai_better_performance = 1
 ]])
 
 -- Nightfly
 vim.cmd([[
-let g:nightflyWinSeparator = '2'
+  let g:nightflyWinSeparator = '2'
 ]])
 
 -- Tokyonight
@@ -68,6 +69,14 @@ if status then
 	})
 end
 
+-- OneDark
+local status, onedark = pcall(require, "onedark")
+if status then
+	onedark.setup({
+		style = 'deep',
+		transparent = true,
+	})
+end
 -- Startup Colorscheme ------------------------------------
 
 pcall(vim.cmd, ":Marakai")
