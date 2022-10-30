@@ -77,6 +77,19 @@ if status then
 		transparent = true,
 	})
 end
+
+-- NeoSolarized
+local status, neosolarized = pcall(require, "NeoSolarized")
+if status then
+  neosolarized.setup({
+    styles = {
+      comments = {italic = true},
+      keywords = {italic = false},
+      functions = {bold = true},
+    }
+  })
+end
+
 -- Startup Colorscheme ------------------------------------
 
 pcall(vim.cmd, ":Marakai")
