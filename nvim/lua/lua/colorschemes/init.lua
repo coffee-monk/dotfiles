@@ -13,7 +13,6 @@ local themes = {
 	{ "Sonokai", "sonokai" },
 	{ "Synthwave84", "synthwave84" },
 
-
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
@@ -21,7 +20,7 @@ local themes = {
 	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
 	{ "Melange", { theme = "melange", lua_loc = "lualine.themes.gruvbox" } },
 	{ "Everforest", { theme = "everforest", lua_loc = "lualine.themes.everforest" } },
-	{ "NeoSolarized", { theme = "NeoSolarized", lua_loc = "lualine.themes.NeoSolarized" } },
+	{ "SolarizedTrans", { theme = "NeoSolarized", lua_loc = "lualine.themes.NeoSolarized" } },
 
 	{ "Marakai", { theme = "marakai", lua_loc = "colorschemes.lualine_themes.marakai" } },
 	{ "Carbonfox", { theme = "carbonfox", lua_loc = "colorschemes.lualine_themes.carbonfox" } },
@@ -30,7 +29,7 @@ local themes = {
 	{ "Onedark", { theme = "onedark", lua_loc = "colorschemes.lualine_themes.onedark" } },
 	{ "Boo", { theme = "boo", lua_loc = "colorschemes.lualine_themes.boo" } },
 	{ "Moonlight", { theme = "moonlight", lua_loc = "colorschemes.lualine_themes.moonlight" } },
-  { "XCode", { theme = "xcode", lua_loc = "colorschemes.lualine_themes.xcode" } },
+	{ "XCode", { theme = "xcode", lua_loc = "colorschemes.lualine_themes.xcode" } },
 }
 
 -- create cmds from themes (colorscheme + lualine)
@@ -73,21 +72,31 @@ end
 local status, onedark = pcall(require, "onedark")
 if status then
 	onedark.setup({
-		style = 'deep',
+		style = "deep",
 		transparent = true,
 	})
 end
 
--- NeoSolarized
+-- Solarized
+
 local status, neosolarized = pcall(require, "NeoSolarized")
 if status then
-  neosolarized.setup({
-    styles = {
-      comments = {italic = true},
-      keywords = {italic = false},
-      functions = {bold = true},
-    }
-  })
+	neosolarized.setup({
+		styles = {
+			comments = { italic = true },
+			keywords = { italic = false },
+			functions = { bold = true },
+		},
+	})
+	-- Set colorscheme to NeoSolarized
+	vim.cmd([[
+   try
+        colorscheme NeoSolarized
+    catch /^Vim\%((\a\+)\)\=:E18o
+        colorscheme default
+        set background=dark
+    endtry
+]])
 end
 
 -- Startup Colorscheme ------------------------------------

@@ -8,6 +8,7 @@ require("plugins.packer") -- installer
 require("plugins.configs")
 require("plugins.toggleterm")
 require("plugins.gitsigns")
+require("plugins.dap")
 
 -- Diagnostics + Completion Plugins
 require("plugins.lsp")

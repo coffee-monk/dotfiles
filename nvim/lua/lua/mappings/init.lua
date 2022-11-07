@@ -49,9 +49,7 @@ map("n", "Y", "y$")
 
 -- paste UX improvements (_ is blackhole register)
 map("n", "d", '"_d')
-map("n", "c", '"_c')
 map("v", "d", '"_d')
-map("v", "c", '"_c')
 map("v", "p", '"_dP') -- paste over text
 
 -- paste over highlighted
