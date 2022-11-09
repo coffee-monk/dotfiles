@@ -68,10 +68,10 @@ return require("packer").startup(function()
 	-- Navigation
 	use("kyazdani42/nvim-tree.lua")
 	use("karb94/neoscroll.nvim")
-	use("SmiteshP/nvim-navic")
 	use({ "phaazon/hop.nvim", branch = "v2" }) -- easymotion
 	use("ibhagwan/fzf-lua") -- requires fzf
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } })
+	use("AckslD/nvim-neoclip.lua")
 
 	-- Coding
 	use("windwp/nvim-autopairs")

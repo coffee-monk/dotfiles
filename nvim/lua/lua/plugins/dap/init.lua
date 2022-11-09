@@ -19,13 +19,6 @@ else
 	return
 end
 
-local status, telescope = pcall(require, "telescope")
-if status then
-	telescope.load_extension("dap")
-else
-	return
-end
-
 -- Symbols ------------------------------------------------
 
 vim.fn.sign_define("DapBreakpoint", { text = "■", texthl = "CodewindowError", linehl = "", numhl = "" })
@@ -63,19 +56,17 @@ map("n", "<leader>dB", function()
 	dap.clear_breakpoints()
 end)
 
--- dap_ui
-map("n", "<leader>di", function()
-	dap.ui.widgets.hover()
-end)
-map("n", "<A-\\>", function()
-	dap_ui.toggle()
-end)
-
--- navigation
+-- stepping & navigation
 map("n", "<leader>dj", function()
-	dap.down()
+	dap.step_over()
 end)
 map("n", "<leader>dk", function()
+	dap.step_back()
+end)
+map("n", "<leader>dJ", function()
+	dap.down()
+end)
+map("n", "<leader>dK", function()
 	dap.up()
 end)
 map("n", "<leader>dh", function()
@@ -86,6 +77,14 @@ map("n", "<leader>dl", function()
 end)
 map("n", "<leader>dn", function()
 	dap.run_to_cursor()
+end)
+
+-- dap_ui
+map("n", "<leader>di", function()
+	dap.ui.widgets.hover()
+end)
+map("n", "<A-\\>", function()
+	dap_ui.toggle()
 end)
 
 -- telescope-dap

@@ -294,10 +294,10 @@ _G.packer_plugins = {
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-navic"] = {
+  ["nvim-neoclip.lua"] = {
     loaded = true,
-    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/nvim-navic",
-    url = "https://github.com/SmiteshP/nvim-navic"
+    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
   },
   ["nvim-scrollbar"] = {
     loaded = true,

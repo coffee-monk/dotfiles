@@ -312,6 +312,7 @@ if status then
   call arpeggio#map('n','','0','sf',':Telescope find_files<CR>')")
   ]]
 	)
+	map("n", "s'", ":Telescope neoclip<CR>")
 	--
 end
 

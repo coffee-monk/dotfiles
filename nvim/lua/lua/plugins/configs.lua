@@ -85,6 +85,13 @@ if status then
 	--
 end
 
+-- nvim-neoclip -------------------------------------------
+
+local status, neoclip = pcall(require, "neoclip")
+if status then
+	neoclip.setup()
+end
+
 -- nvim-tree ----------------------------------------------
 
 local status, nvim_tree = pcall(require, "nvim-tree")
@@ -259,6 +266,9 @@ if status then
 			layout_config = { height = 0.99, width = 0.99 },
 		},
 	})
+	-- Extensions:
+	pcall(telescope.load_extension, "neoclip")
+	pcall(telescope.load_extension, "dap")
 	--
 end
 
