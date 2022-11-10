@@ -65,6 +65,7 @@ cmp.setup({
 		["<CR>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.confirm({ select = false }) -- bool -> select 1st option
+        cmp.abort()
 			else
 				fallback()
 			end
