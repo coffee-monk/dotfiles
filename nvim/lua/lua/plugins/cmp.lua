@@ -65,7 +65,10 @@ cmp.setup({
 		["<CR>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.confirm({ select = false }) -- bool -> select 1st option
-        cmp.abort()
+				if cmp.visible() then
+					  cmp.abort()
+					fallback()
+				end
 			else
 				fallback()
 			end
@@ -73,7 +76,7 @@ cmp.setup({
 		["<S-CR>"] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
 				cmp.confirm()
-        luasnip.jump(1)
+				luasnip.jump(1)
 			else
 				fallback()
 			end
