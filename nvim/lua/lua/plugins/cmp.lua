@@ -66,7 +66,7 @@ cmp.setup({
 			if cmp.visible() then
 				cmp.confirm({ select = false }) -- bool -> select 1st option
 				if cmp.visible() then
-					  cmp.abort()
+					cmp.abort()
 					fallback()
 				end
 			else

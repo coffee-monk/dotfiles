@@ -264,11 +264,37 @@ end
 local status = pcall(require, "hop")
 if status then
 	--
-	vim.cmd([[
-  map <silent> fj <cmd>HopWordAC<CR>
-  map <silent> fk <cmd>HopWordBC<CR>
-  map <silent> fh <cmd>HopWordMW<CR>
-]])
+	local function HopWordAC()
+		vim.cmd([[
+     :lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })
+     ]])
+	end
+	local function HopWordBC()
+		vim.cmd([[
+     :lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })
+     ]])
+	end
+	local function HopWordMW()
+		vim.cmd([[
+     :lua require'hop'.hint_words({ multi_windows = true })
+     ]])
+	end
+	--
+	map("n", "fj", function()
+		local status = pcall(HopWordAC)
+		if not status then
+			HopWordMW()
+		end
+	end)
+	map("n", "fk", function()
+		local status = pcall(HopWordBC)
+		if not status then
+			HopWordMW()
+		end
+	end)
+	map("n", "fh", function()
+		HopWordMW()
+	end)
 	--
 end
 

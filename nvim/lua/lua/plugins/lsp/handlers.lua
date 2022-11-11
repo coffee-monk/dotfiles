@@ -14,7 +14,7 @@ M.setup = function()
 	end
 
 	-- Diagnostic settings
-	local config = {
+	vim.diagnostic.config({
 		virtual_text = false,
 		signs = {
 			active = signs,
@@ -31,8 +31,7 @@ M.setup = function()
 			prefix = "",
 		},
 	}
-
-	vim.diagnostic.config(config)
+)
 
 	-- Set rounded corners on pop-up
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -49,8 +48,8 @@ end
 -- Highlight text on hover
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
+	local status, illuminate = pcall(require, "illuminate")
+	if not status then
 		return
 	end
 	illuminate.on_attach(client)
@@ -60,16 +59,16 @@ end
 -- LSP Mappings
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "g;", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(
