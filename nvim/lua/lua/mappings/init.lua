@@ -296,6 +296,21 @@ if status then
 		HopWordMW()
 	end)
 	--
+	map("v", "fj", function()
+		local status = pcall(HopWordAC)
+		if not status then
+			HopWordMW()
+		end
+	end)
+	map("v", "fk", function()
+		local status = pcall(HopWordBC)
+		if not status then
+			HopWordMW()
+		end
+	end)
+	map("v", "fh", function()
+		HopWordMW()
+	end)
 end
 
 -- codewindow ----------------------------------------------
@@ -303,7 +318,7 @@ end
 local status, codewindow = pcall(require, "codewindow")
 if status then
 	--
-	map("n", "|", function()
+	map("n", "<C-\\>", function()
 		codewindow.toggle_minimap()
 	end)
 	--
