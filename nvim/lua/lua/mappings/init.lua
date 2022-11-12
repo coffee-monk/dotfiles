@@ -404,3 +404,14 @@ pcall(
     pall arpeggio#map('x','s','0','sh','v^')
   ]]
 )
+
+-- TEXT-OBJECTS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+local chars = { "_", ".", ":", ",", ";", "|", "/", "\\", "*", "+", "%", "`", "?" }
+
+for _, char in ipairs(chars) do
+	for _, mode in ipairs({ "x", "o" }) do
+		map(mode, "i" .. char, ":<C-u>silent! normal! f" .. char .. "F" .. char .. "lvt" .. char .. "<CR>")
+		map(mode, "a" .. char, ":<C-u>silent! normal! f" .. char .. "F" .. char .. "vf" .. char .. "<CR>")
+	end
+end
