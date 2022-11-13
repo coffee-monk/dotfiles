@@ -34,7 +34,6 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		-- commit = "ffd4525fd9e61950520cea4737abc1800ad4aabb",
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
@@ -82,8 +81,7 @@ return require("packer").startup(function()
 	use("mg979/vim-visual-multi")
 	use("svermeulen/vim-extended-ft")
 	use("fedepujol/move.nvim")
-	use("kana/vim-textobj-user")
-	use("rhysd/vim-textobj-anyblock")
+	use("echasnovski/mini.ai")
 	use("mattn/emmet-vim")
 
 	-- Colorschemes

@@ -17,9 +17,6 @@ map("x", "ss", "<Nop>") -- unmap ss to hold key
 map("n", ";", ":", { noremap = true, silent = false })
 map("x", ";", ":<BS><BS><BS><BS><BS>", { noremap = true, silent = false })
 
--- -- manual lookup of key under cursor
--- map("n", "0", "K")
-
 -- word/char/line count
 map("n", "<Leader><Leader>f", "g<C-g>")
 
@@ -179,8 +176,6 @@ cnoremap <expr> <C-j> wildmenumode() ? "\<right>" : "\<down>"
 cnoremap <expr> <C-h> wildmenumode() ? "\<up>" : "\<left>"
 "choose selection
 cnoremap <expr> <C-l> wildmenumode() ? " \<bs>\<C-Z>" : "\<right>"
-"cnoremap <expr> / wildmenumode() ? " \<bs>\<C-Z>" : "\<right>"
-"cnoremap <expr> / wildmenumode() ? " \<bs><bs>/<C-Z>" : "\<right>"
 cnoremap <expr> / wildmenumode() ? " \<bs><bs>/<C-Z>" : "/"
 ]])
 
@@ -295,7 +290,6 @@ if status then
 	map("n", "fh", function()
 		HopWordMW()
 	end)
-	--
 	map("v", "fj", function()
 		local status = pcall(HopWordAC)
 		if not status then
@@ -311,6 +305,7 @@ if status then
 	map("v", "fh", function()
 		HopWordMW()
 	end)
+	--
 end
 
 -- codewindow ----------------------------------------------

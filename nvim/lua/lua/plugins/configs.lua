@@ -21,6 +21,21 @@ if status then
 	autopairs.setup()
 end
 
+-- mini.ai (text-objects) ---------------------------------
+
+local status, mini_ai = pcall(require, "mini.ai")
+if status then
+	local gen_spec = require("mini.ai").gen_spec
+	mini_ai.setup({
+		custom_textobjects = {
+			b = { { [[%b'']], [[%b""]], "%b()", "%b[]", "%b{}" }, "^.().*().$" },
+			B = { { "%b{}", "%b()", "%b[]" }, "^.().*().$" },
+			c = { { "%b()" }, "^.().*().$" },
+			C = { { "%b{}" }, "^.().*().$" },
+		},
+	})
+end
+
 -- marks.nvim ---------------------------------------------
 
 local status, marks = pcall(require, "marks")
@@ -62,7 +77,9 @@ end
 local status, nvim_comment = pcall(require, "nvim_comment")
 if status then
 	--
-	nvim_comment.setup()
+	nvim_comment.setup({
+		comment_chunk_text_object = "<Nop>", -- remove text-object "ic"
+	})
 	--
 end
 

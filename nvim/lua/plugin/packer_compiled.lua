@@ -214,6 +214,11 @@ _G.packer_plugins = {
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/melange",
     url = "https://github.com/savq/melange"
   },
+  ["mini.ai"] = {
+    loaded = true,
+    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/mini.ai",
+    url = "https://github.com/echasnovski/mini.ai"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/monokai.nvim",
@@ -408,16 +413,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/vim-synthwave84",
     url = "https://github.com/artanikin/vim-synthwave84"
-  },
-  ["vim-textobj-anyblock"] = {
-    loaded = true,
-    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/vim-textobj-anyblock",
-    url = "https://github.com/rhysd/vim-textobj-anyblock"
-  },
-  ["vim-textobj-user"] = {
-    loaded = true,
-    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
-    url = "https://github.com/kana/vim-textobj-user"
   },
   ["vim-visual-multi"] = {
     loaded = true,
