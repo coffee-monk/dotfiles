@@ -2,7 +2,7 @@
 
 local ls = require("luasnip")
 
-local filetype = "html"
+local filetypes = { "typescript", "typescriptreact", "tsx" }
 
 -- Snippet Nodes
 local s = ls.snippet
@@ -13,9 +13,13 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
 
-	-- console.log(})
+	-- console.log()
 	s("cl", fmt([[ console.log({})  ]], { i(0, "") })),
 }
 
--- add_snippets() end -------------------------------------
-ls.add_snippets(filetype, snippets, { key = filetype })
+-- load & extend snippets for each filetype ---------------
+
+for _, filetype in pairs(filetypes) do
+	ls.add_snippets(filetype, snippets, { key = filetype }) -- load
+	ls.filetype_extend(filetype, { "javascript" }) -- extend
+end

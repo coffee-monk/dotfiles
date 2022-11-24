@@ -2,17 +2,17 @@
 
 local ls = require("luasnip")
 
-local filetype = "javascript"
+local filetypes = { "javascript", "javascriptreact", "jsx" }
 
 -- Snippet Nodes
 local s = ls.snippet
-local sn = ls.snippet_node
-local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
+-- local sn = ls.snippet_node
+-- local t = ls.text_node
+-- local f = ls.function_node
+-- local c = ls.choice_node
+-- local d = ls.dynamic_node
 
 -- Add Snippets -------------------------------------------
 
@@ -34,5 +34,7 @@ local snippets = {
 	),
 }
 
--- add_snippets() end -------------------------------------
-ls.add_snippets(filetype, snippets, { key = filetype })
+-- load snippets for each filetype
+for _, filetype in pairs(filetypes) do
+	ls.add_snippets(filetype, snippets, { key = filetype })
+end

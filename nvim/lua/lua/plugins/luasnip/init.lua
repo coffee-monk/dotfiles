@@ -5,7 +5,8 @@ end
 
 -- load snippets from directory ---------------------------
 
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/plugins/luasnip/snippets/" })
+local snippet_dir = "~/.config/nvim/lua/plugins/luasnip/snippets/"
+require("luasnip.loaders.from_lua").load({ paths = snippet_dir })
 
 -- Config -------------------------------------------------
 

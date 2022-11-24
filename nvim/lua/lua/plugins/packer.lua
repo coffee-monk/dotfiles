@@ -83,6 +83,7 @@ return require("packer").startup(function()
 	use("fedepujol/move.nvim")
 	use("echasnovski/mini.ai")
 	use("mattn/emmet-vim")
+  use("AndrewRadev/tagalong.vim")
 
 	-- Colorschemes
 	use({ "Everblush/everblush.nvim", as = "everblush" })

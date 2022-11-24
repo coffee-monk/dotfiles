@@ -374,6 +374,11 @@ _G.packer_plugins = {
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/surround.nvim",
     url = "https://github.com/ur4ltz/surround.nvim"
   },
+  ["tagalong.vim"] = {
+    loaded = true,
+    path = "/home/mjc/.local/share/nvim/site/pack/packer/start/tagalong.vim",
+    url = "https://github.com/AndrewRadev/tagalong.vim"
+  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/mjc/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
