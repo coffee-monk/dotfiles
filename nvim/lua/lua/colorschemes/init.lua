@@ -14,7 +14,6 @@ local themes = {
 	{ "Synthwave84", "synthwave84" },
 
 	{ "Gruvbox", { theme = "gruvbox", lua_loc = "lualine.themes.gruvbox" } },
-	{ "Dark", { theme = "vscode", lua_loc = "lualine.themes.vscode" } },
 	{ "Blush", { theme = "everblush", lua_loc = "lualine.themes.everblush" } },
 	{ "Dracula", { theme = "dracula", lua_loc = "lualine.themes.dracula-nvim" } },
 	{ "Nord", { theme = "nord", lua_loc = "lualine.themes.nord" } },
@@ -26,6 +25,7 @@ local themes = {
 	{ "Carbonfox", { theme = "carbonfox", lua_loc = "colorschemes.lualine_themes.carbonfox" } },
 	{ "Solarized", { theme = "solarized", lua_loc = "colorschemes.lualine_themes.solarized" } },
 	{ "Nightowl", { theme = "nightfly", lua_loc = "colorschemes.lualine_themes.nightowl" } },
+	{ "Dark", { theme = "vscode", lua_loc = "colorschemes.lualine_themes.dark" } },
 	{ "Onedark", { theme = "onedark", lua_loc = "colorschemes.lualine_themes.onedark" } },
 	{ "Boo", { theme = "boo", lua_loc = "colorschemes.lualine_themes.boo" } },
 	{ "Moonlight", { theme = "moonlight", lua_loc = "colorschemes.lualine_themes.moonlight" } },
