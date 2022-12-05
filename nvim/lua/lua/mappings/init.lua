@@ -162,6 +162,9 @@ map("x", "<", "<gv")
 -- reload vim with saved settings
 map("n", "<Leader>\\", ":source<CR>")
 
+-- spell checker toggle
+map("n", "<Leader>s", ":set spell!<CR>")
+
 -- COMMAND MODE WILDMENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 vim.cmd([[
@@ -181,8 +184,8 @@ cnoremap <expr> / wildmenumode() ? " \<bs><bs>/<C-Z>" : "/"
 
 -- CUSTOM FUNCTIONS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+-- support for improved paragraph movement
 vim.cmd([[
-  "Paragraph movement down visual mode
   function! QuickMove_Down(arg)
     let mode = a:arg
     let lnum = line('.') + 1
