@@ -1,5 +1,9 @@
 local colors = {
+<<<<<<< HEAD
 	black = "#252526",
+=======
+	black = "#252525",
+>>>>>>> c0024fe534253a7056b907cc64394740b4b74a93
 	white = "#D4D4D4",
 	red = "#C586C0",
 	green = "#4EC9B0",
