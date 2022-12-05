@@ -32,6 +32,29 @@ local snippets = {
 			{ i(1, ""), i(0, "") }
 		)
 	),
+
+	-- const var = () => {}
+	s(
+		"caf",
+		fmt(
+			[[ 
+      const {} = ({}) => {{ 
+        {} 
+      }} ]],
+			{ i(1, ""), i(2, ""), i(0, "") }
+		)
+	),
+
+	-- import { var } from '../dir'
+	s(
+		"impc",
+		fmt(
+			[[
+	      import {{ {} }} from '{}'
+	       ]],
+			{ i(0, ""), i(1, "") }
+		)
+	),
 }
 
 -- load snippets for each filetype

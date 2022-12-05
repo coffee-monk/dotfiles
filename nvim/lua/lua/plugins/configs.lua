@@ -12,6 +12,7 @@ end
 local status, indent_blankline = pcall(require, "indent_blankline")
 if status then
 	indent_blankline.setup()
+
 end
 
 -- autopairs ----------------------------------------------
