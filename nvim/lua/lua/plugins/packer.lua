@@ -86,8 +86,8 @@ return require("packer").startup(function()
   use("AndrewRadev/tagalong.vim")
 
 	-- Colorschemes
+  use("rktjmp/lush.nvim") -- colorscheme creation tool
 	use({ "Everblush/everblush.nvim", as = "everblush" })
-	use("rktjmp/lush.nvim") -- colorscheme creation tool
 	use("EdenEast/nightfox.nvim")
 	use("ellisonleao/gruvbox.nvim")
 	use("folke/tokyonight.nvim")

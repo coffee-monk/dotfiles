@@ -6,7 +6,13 @@ local lsp_installer = require("nvim-lsp-installer")
 
 -- Setup Configurations -----------------------------------
 
-local servers = { "sumneko_lua", "tsserver", 'tailwindcss' }
+local servers = { "sumneko_lua", "tsserver", "tailwindcss" }
+
+-- Handler Module -----------------------------------------
+
+local handlers = require("plugins.lsp.handlers")
+
+-- SETUP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 -- nvim-lsp-installer
 lsp_installer.setup({
@@ -17,8 +23,8 @@ lsp_installer.setup({
 -- lspconfig
 for _, server in pairs(servers) do
 	local opts = {
-		on_attach = require("plugins.lsp.handlers").on_attach,
-		capabilities = require("plugins.lsp.handlers").capabilities,
+		on_attach = handlers.on_attach,
+		capabilities = handlers.capabilities,
 		root_dir = function()
 			return vim.loop.cwd()
 		end,
