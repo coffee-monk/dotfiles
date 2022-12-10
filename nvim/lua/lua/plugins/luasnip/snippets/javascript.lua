@@ -35,7 +35,7 @@ local snippets = {
 
 	-- const var = () => {}
 	s(
-		"caf",
+		"afc",
 		fmt(
 			[[ 
       const {} = ({}) => {{ 
