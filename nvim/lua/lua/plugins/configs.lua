@@ -1,25 +1,13 @@
 -- PLUGIN SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
--- hop.nvim (easymotion) ----------------------------------
+local plugins =
+	{ "hop", "indent_blankline", "nvim-autopairs", "marks", "colorizer", "scrollbar", "move.nvim", "neoclip", "" }
 
-local status, hop = pcall(require, "hop")
-if status then
-	hop.setup()
-end
-
--- indent-blankline.nvim ----------------------------------
-
-local status, indent_blankline = pcall(require, "indent_blankline")
-if status then
-	indent_blankline.setup()
-
-end
-
--- autopairs ----------------------------------------------
-
-local status, autopairs = pcall(require, "nvim-autopairs")
-if status then
-	autopairs.setup()
+for _, plugin in ipairs(plugins) do
+	local status, plugin_loader = pcall(require, plugin)
+	if status then
+		plugin_loader.setup()
+	end
 end
 
 -- mini.ai (text-objects) ---------------------------------
@@ -35,27 +23,6 @@ if status then
 			C = { { "%b{}" }, "^.().*().$" },
 		},
 	})
-end
-
--- marks.nvim ---------------------------------------------
-
-local status, marks = pcall(require, "marks")
-if status then
-	marks.setup()
-end
-
--- nvim-colorizer -----------------------------------------
-
-local status, colorizer = pcall(require, "colorizer")
-if status then
-	colorizer.setup()
-end
-
--- nvim-scrollbar -----------------------------------------
-
-local status, scrollbar = pcall(require, "scrollbar")
-if status then
-	scrollbar.setup()
 end
 
 -- codewindow ---------------------------------------------
@@ -84,13 +51,6 @@ if status then
 	--
 end
 
--- move.nvim ----------------------------------------------
-
-local status, move = pcall(require, "move.nvim")
-if status then
-	move.setup()
-end
-
 -- surround -----------------------------------------------
 
 local status, surround = pcall(require, "surround")
@@ -101,13 +61,6 @@ if status then
 		prefix = "sd",
 	})
 	--
-end
-
--- nvim-neoclip -------------------------------------------
-
-local status, neoclip = pcall(require, "neoclip")
-if status then
-	neoclip.setup()
 end
 
 -- nvim-tree ----------------------------------------------
