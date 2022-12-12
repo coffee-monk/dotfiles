@@ -25,7 +25,7 @@ map("n", "`", "~h")
 map("x", "`", "~")
 
 -- exit search highlight + exit lsp window
-map("n", "<ESC>", ":noh<CR>jk")
+map("n", "<ESC>", ":noh<CR>kj")
 
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")

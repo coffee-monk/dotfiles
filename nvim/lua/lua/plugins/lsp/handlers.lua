@@ -5,8 +5,9 @@ M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+		-- { name = "DiagnosticSignHint", text = "" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -15,7 +16,7 @@ M.setup = function()
 
 	-- Diagnostic settings
 	vim.diagnostic.config({
-		virtual_text = false,
+		virtual_text = true,
 		signs = {
 			active = signs,
 		},

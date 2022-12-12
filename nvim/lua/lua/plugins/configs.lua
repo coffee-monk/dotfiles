@@ -14,7 +14,6 @@ end
 
 local status, mini_ai = pcall(require, "mini.ai")
 if status then
-	local gen_spec = require("mini.ai").gen_spec
 	mini_ai.setup({
 		custom_textobjects = {
 			b = { { [[%b'']], [[%b""]], "%b()", "%b[]", "%b{}" }, "^.().*().$" },
@@ -186,13 +185,6 @@ if status then
 	--
 end
 
--- emmet-vim ----------------------------------------------
-
-vim.cmd([[
-  let g:user_emmet_leader_key=','
-  let g:user_emmet_next_key='<S-CR>'
-]])
-
 -- fzf-lua ------------------------------------------------
 
 local opts = { noremap = true, silent = true }
@@ -277,6 +269,13 @@ pcall(
     call arpeggio#map('n','s','0','kl',":lua require('neoscroll').scroll(-0.25, true, 250)<CR>")
   ]]
 )
+
+-- emmet-vim ----------------------------------------------
+
+vim.cmd([[
+  let g:user_emmet_leader_key=','
+  let g:user_emmet_next_key='<S-CR>'
+]])
 
 -- vim-extended-ft ----------------------------------------
 
