@@ -1,13 +1,21 @@
 -- PLUGIN SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-local plugins =
-	{ "hop", "indent_blankline", "nvim-autopairs", "marks", "colorizer", "scrollbar", "move.nvim", "neoclip", "" }
+local plugins = { "hop", "nvim-autopairs", "marks", "colorizer", "scrollbar", "move.nvim", "neoclip" }
 
 for _, plugin in ipairs(plugins) do
 	local status, plugin_loader = pcall(require, plugin)
 	if status then
 		plugin_loader.setup()
 	end
+end
+
+-- indent_blankline ---------------------------------------
+
+local status, indent_blankline = pcall(require, "indent_blankline")
+if status then
+	indent_blankline.setup({
+      show_current_context = true
+  })
 end
 
 -- mini.ai (text-objects) ---------------------------------
