@@ -53,6 +53,7 @@ map("n", "d", '"_d')
 map("v", "d", '"_d')
 map("x", "p", '"_dP') -- paste over highlighted
 map("n", "D", '"_d$') -- delete to end of line
+map("n", "cd", 'cc<ESC>"_dd') -- cut text & delete line
 
 -- remap go to column #
 map("n", "<Leader><BAR>", "<BAR>")

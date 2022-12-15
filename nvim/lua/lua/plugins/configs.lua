@@ -1,6 +1,6 @@
 -- PLUGIN SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-local plugins = { "hop", "nvim-autopairs", "marks", "colorizer", "scrollbar", "move.nvim", "neoclip" }
+local plugins = { "hop", "nvim-autopairs", "marks", "colorizer", "scrollbar", "move.nvim" }
 
 for _, plugin in ipairs(plugins) do
 	local status, plugin_loader = pcall(require, plugin)
@@ -215,6 +215,17 @@ if status then
 		grep = {
 			input_prompt = "GREP => ",
 		},
+	})
+	--
+end
+
+-- neoclip ------------------------------------------------
+
+local status, neoclip = pcall(require, "neoclip")
+if status then
+	--
+	neoclip.setup({
+		default_register = "+",
 	})
 	--
 end
