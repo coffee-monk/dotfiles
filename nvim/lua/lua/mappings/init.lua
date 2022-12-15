@@ -51,10 +51,8 @@ map("n", "Y", "y$")
 -- paste UX improvements (_ is blackhole register)
 map("n", "d", '"_d')
 map("v", "d", '"_d')
-map("v", "p", '"_dP') -- paste over text
-
--- paste over highlighted
-map("x", "p", '"_dP')
+map("x", "p", '"_dP') -- paste over highlighted
+map("n", "D", '"_d$') -- delete to end of line
 
 -- remap go to column #
 map("n", "<Leader><BAR>", "<BAR>")
