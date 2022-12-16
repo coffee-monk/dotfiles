@@ -14,8 +14,8 @@ end
 local status, indent_blankline = pcall(require, "indent_blankline")
 if status then
 	indent_blankline.setup({
-      show_current_context = true
-  })
+		show_current_context = true,
+	})
 end
 
 -- mini.ai (text-objects) ---------------------------------
@@ -219,7 +219,7 @@ if status then
 	--
 end
 
--- neoclip ------------------------------------------------
+-- neoclip (requires xclip!) ------------------------------
 
 local status, neoclip = pcall(require, "neoclip")
 if status then

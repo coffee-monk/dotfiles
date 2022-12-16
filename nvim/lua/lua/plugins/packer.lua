@@ -70,7 +70,7 @@ return require("packer").startup(function()
 	use({ "phaazon/hop.nvim", branch = "v2" }) -- easymotion
 	use("ibhagwan/fzf-lua") -- requires fzf
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } })
-	use("AckslD/nvim-neoclip.lua")
+	use("AckslD/nvim-neoclip.lua") -- requires xclip (clipboard)
 
 	-- Coding
 	use("windwp/nvim-autopairs")
