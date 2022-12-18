@@ -35,6 +35,7 @@ map("n", "<Leader><CR>", "O<ESC>")
 -- emmet typing fix
 map("i", ",i", ",i")
 map("i", ",a", ",a")
+map("i", ",g", ",g")
 
 -- break line at character
 map("n", "K", "i<CR><ESC>")
