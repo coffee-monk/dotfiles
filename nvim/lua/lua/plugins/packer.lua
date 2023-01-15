@@ -80,13 +80,13 @@ return require("packer").startup(function()
 	use("terrortylor/nvim-comment")
 	use("mg979/vim-visual-multi")
 	use("svermeulen/vim-extended-ft")
-	use("fedepujol/move.nvim")
+	use("ur4ltz/move.nvim")
 	use("echasnovski/mini.ai")
 	use("mattn/emmet-vim")
-  use("AndrewRadev/tagalong.vim")
+	use("AndrewRadev/tagalong.vim")
 
 	-- Colorschemes
-  use("rktjmp/lush.nvim") -- colorscheme creation tool
+	use("rktjmp/lush.nvim") -- colorscheme creation tool
 	use({ "Everblush/everblush.nvim", as = "everblush" })
 	use("EdenEast/nightfox.nvim")
 	use("ellisonleao/gruvbox.nvim")
