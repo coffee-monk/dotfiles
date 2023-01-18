@@ -75,7 +75,7 @@ cmp.setup({
 		end),
 		["<S-CR>"] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
-				cmp.confirm()
+				-- cmp.confirm()
 				luasnip.jump(1)
 			else
 				fallback()
