@@ -58,5 +58,4 @@ modified = '! '
 staged = '[\($count\)](#cb1ed1) '
 renamed = "» "
 deleted = "✘ "
-# stashed = "$ "
-
+stashed = "⛁  "
