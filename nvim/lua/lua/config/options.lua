@@ -1,11 +1,15 @@
--- SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- OPTIONS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-local settings = {
+-- Neovim Leader Key <Leader>
+vim.g.mapleader = [[ ]]
+
+-- vim.opt
+local options = {
 	fileencoding = "utf-8",
 	clipboard = "unnamedplus",
 	undofile = true,
 	laststatus = 2,
-
+	--
 	title = true,
 	expandtab = true,
 	smarttab = true,
@@ -13,18 +17,18 @@ local settings = {
 	tabstop = 2,
 	showtabline = 2,
 	smartindent = true,
-
+	--
 	hlsearch = true,
 	incsearch = true,
 	ignorecase = true,
 	smartcase = true,
 	formatoptions = vim.opt.formatoptions - { "c", "r", "o" },
-
+	--
 	splitbelow = true,
 	splitright = true,
 	wrap = true,
 	termguicolors = true,
-
+	--
 	relativenumber = true,
 	cursorline = false,
 	signcolumn = "yes",
@@ -32,27 +36,27 @@ local settings = {
 	numberwidth = 4,
 	conceallevel = 0,
 	showmode = false,
-
+	--
 	hidden = true,
-
+	--
 	mouse = "a",
-
+	--
 	timeoutlen = 1000,
 	updatetime = 300,
-
+	--
 	scrolloff = 0,
 	sidescrolloff = 0,
-
-  ls = 0,
-  ch = 0,
+	--
+	ls = 0,
+	ch = 0,
 }
 
--- set settings for each key/value
-for key, value in pairs(settings) do
+-- set options for each key/value
+for key, value in pairs(options) do
 	vim.opt[key] = value
 end
 
--- SETTINGS in VimScript >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- VimScript Settings >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

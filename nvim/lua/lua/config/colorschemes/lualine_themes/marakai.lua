@@ -41,6 +41,6 @@ return {
 	inactive = {
 		a = { bg = colors.black, fg = colors.gray, gui = "bold" },
 		b = { bg = colors.darkgray, fg = colors.gray },
-		c = { bg = colors.black, fg = colors.gray },
+		c = { bg = colors.black, fg = colors.gray, gui = 'underline' },
 	},
 }

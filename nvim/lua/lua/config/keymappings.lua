@@ -1,15 +1,10 @@
--- MAPPINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- KEY MAPPINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 -- set keymap with options if provided
 local map = function(mode, key, result, options)
 	options = options or { noremap = true, silent = true }
 	vim.keymap.set(mode, key, result, options)
 end
-
--- leader key
-vim.g.mapleader = " "
-map("n", "<SPACE>", "<Nop>") -- unmap <SPACE>
-map("x", "ss", "<Nop>") -- unmap ss to hold key
 
 -- STANDARD KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -89,6 +84,7 @@ map("i", "<C-s>", "<C-o>:w!<CR>")
 map("n", "Q", ":q<CR>")
 
 -- select all
+map("n", "<Leader>a", "ggVG")
 map("n", "<C-a>", "ggVG")
 
 -- invert lines vertically
@@ -170,6 +166,14 @@ map("n", "<Leader>\\", ":source<CR>")
 -- spell checker toggle
 map("n", "<Leader>s", ":set spell!<CR>")
 
+-- cmd terminal mode
+pcall(
+	vim.cmd,
+	[[
+    nnoremap <Leader>; :!
+  ]]
+)
+
 -- COMMAND MODE WILDMENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 vim.cmd([[
@@ -214,33 +218,57 @@ vim.cmd([[
 
 -- PLUGIN KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
--- windex (maximizer) -------------------------------------
+-- (maximizer) --------------------------------------------
 
-local status = pcall(require, "windex")
+local status = pcall(require, "maximizer")
 if status then
 	--
-	map("n", "!", "<Cmd>lua require('windex').toggle_nvim_maximize()<CR>")
+	map("n", "!", '<cmd>lua require("maximizer").toggle()<CR>')
+	--
+end
+
+-- neo-tree -----------------------------------------------
+
+local status = pcall(require, "neo-tree")
+if status then
+	--
+	map("n", "|", ":NeoTreeRevealToggle<CR>")
 	--
 end
 
 -- nvim-tree ----------------------------------------------
 
-local status, nvim_tree = pcall(require, "nvim-tree")
+local status = pcall(require, "nvim-tree")
 if status then
 	--
-	map("n", "\\", ":NvimTreeToggle<CR>")
+	map("n", "\\", ":NeoTreeClose<CR>:NvimTreeToggle<CR>")
+	--
+end
+
+-- oil ----------------------------------------------------
+
+local status, oil = pcall(require, "oil")
+if status then
+	--
+	map("n", "<Leader>\\", function()
+		oil.close()
+		oil.open_float()
+	end)
 	--
 end
 
 -- nvim-comment ('<C-/>' & '<C-_>' are same) --------------
 
-local status = pcall(require, "nvim_comment")
+local status, nvim_comment = pcall(require, "nvim_comment")
 if status then
 	--
 	map("n", "<C-/>", ":CommentToggle<CR>")
 	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>gv]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
 	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>gv]])
+	map("v", "<", function()
+		nvim_comment.select_comment_chunk()
+	end)
 	--
 end
 
@@ -346,28 +374,61 @@ end
 
 -- telescope ----------------------------------------------
 
-local status = pcall(require, "telescope")
-if status then
-	--
-	map("n", "sf", ":Telescope find_files<CR>")
-	pcall(
-		vim.cmd,
-		[[
-  call arpeggio#map('n','','0','sf',':Telescope find_files<CR>')")
+pcall(
+	vim.cmd,
+	[[
+    nnoremap sf :Telescope find_files<CR>
+    call arpeggio#map('n','','0','sf',':Telescope find_files<CR>')
   ]]
-	)
-	map("n", "s'", ":Telescope neoclip<CR>")
-	--
-end
+)
+pcall(
+	vim.cmd,
+	[[
+    nnoremap <silent> <leader>df :Telescope dap frames<CR>
+    nnoremap <silent> <leader>dt :Telescope dap list_breakpoints<CR>
+  ]]
+)
+pcall(
+	vim.cmd,
+	[[
+    nnoremap <silent> s; :Noice telescope<CR>
+  ]]
+)
+pcall(
+	vim.cmd,
+	[[
+    nnoremap <silent> s' :Telescope neoclip<CR>
+    call arpeggio#map('n','','0',"s'",':Telescope neoclip<CR>')
+  ]]
+)
+
+-- neoscroll -----------------------------------------------
+
+pcall(
+	vim.cmd,
+	[[
+    call arpeggio#map('n','s','0','jk',":lua require('neoscroll').scroll(0.25, true, 250)<CR>")
+    call arpeggio#map('n','s','0','kl',":lua require('neoscroll').scroll(-0.25, true, 250)<CR>")
+  ]]
+)
 
 -- fzf-lua (files + grep) ---------------------------------
 
 pcall(
 	vim.cmd,
 	[[
-  call arpeggio#map('n','s','0','we',':FzfLua files<CR>')
-  call arpeggio#map('n','s','0','qw',':FzfLua grep<CR>')
-]]
+    call arpeggio#map('n','s','0','we',':FzfLua files<CR>')
+    call arpeggio#map('n','s','0','qw',':FzfLua grep<CR>')
+  ]]
+)
+
+-- vim-fugitive -------------------------------------------
+
+pcall(
+	vim.cmd,
+	[[
+    nnoremap <Leader>g :G
+  ]]
 )
 
 -- vim-extended-ft ----------------------------------------

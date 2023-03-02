@@ -1,17 +1,11 @@
--- Settings
-require("settings")
-require("mappings")
-require("colorschemes")
+-- NEOVIM Initializer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
--- General Plugins
-require("plugins.packer") -- installer
-require("plugins.configs")
-require("plugins.toggleterm")
-require("plugins.gitsigns")
-require("plugins.dap")
-
--- Diagnostics + Completion Plugins
-require("plugins.lsp")
-require("plugins.cmp")
-require("plugins.luasnip")
-require("plugins.treesitter")
+vim.g.colorscheme = "Marakai" -- global colorscheme
+--
+require("config.options") -- (vim.opt) settings
+--
+require("config.lazy") --  plugin loader (lazy.nvim)
+--
+require("config.keymappings")
+--
+require("config.colorschemes")

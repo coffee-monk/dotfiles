@@ -1,13 +1,73 @@
-local status = pcall(require, "lspconfig")
-if not status then
-	return
-end
+return {
+	{ "williamboman/mason.nvim", opts = {
+    ui = {
+      border = 'none',
+      width = 1.0,
+      height = 1.0
+    }
+  } },
+	{
+		"williamboman/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = { "lua_ls", "tsserver" },
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local lspconfig = require("lspconfig")
 
-local status = pcall(require, "nvim-lsp-installer")
-if not status then
-	return
-end
+			local handlers = require("plugins.lsp.handlers")
+			require("plugins.lsp.handlers").setup()
 
-require("plugins.lsp.lspconfig")
-require("plugins.lsp.handlers").setup()
-require("plugins.lsp.null_ls")
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+			local root_dir = function()
+				return vim.loop.cwd()
+			end
+
+			-- lua-language-server ------------------------------
+			lspconfig["lua_ls"].setup({
+				on_attach = handlers.on_attach,
+				capabilities = capabilities,
+				root_dir = root_dir,
+				settings = {
+					Lua = {
+						runtime = {
+							-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+							version = "LuaJIT",
+						},
+						diagnostics = {
+							-- Get the language server to recognize the `vim` global
+							globals = { "vim" },
+						},
+						workspace = {
+							-- Make the server aware of Neovim runtime files
+							library = vim.api.nvim_get_runtime_file("", true),
+							checkThirdParty = false,
+						},
+						-- Do not send telemetry data containing a randomized but unique identifier
+						telemetry = {
+							enable = false,
+						},
+					},
+				},
+			})
+
+			-- typescript-language-server -----------------------
+			lspconfig["tsserver"].setup({
+				on_attach = handlers.on_attach,
+				capabilities = capabilities,
+			})
+		end,
+	},
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("plugins.lsp.null_ls")
+		end,
+	}, -- formatter
+}

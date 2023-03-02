@@ -1,15 +1,8 @@
 -- Null-ls >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
--- import null-ls
-local status, null_ls = pcall(require, "null-ls")
-if not status then
-	return
-end
+local null_ls = require("null-ls")
 
 -----------------------------------------------------------
-
-local formatting = null_ls.builtins.formatting
--- local diagnostics = null_ls.builtins.diagnostics
 
 -- config for format on save
 local on_attach = function(client)
@@ -23,6 +16,8 @@ local on_attach = function(client)
 end
 
 -- Init Config
+local formatting = null_ls.builtins.formatting
+
 null_ls.setup({
 	debug = false,
 	sources = {
