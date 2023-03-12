@@ -7,7 +7,7 @@ return {
 	"chentoast/marks.nvim",
 	{
 		"0x00-ketsu/maximizer.nvim",
-		config = true
+		config = true,
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",

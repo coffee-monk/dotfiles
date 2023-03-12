@@ -1,15 +1,18 @@
 return {
-	{ "williamboman/mason.nvim", opts = {
-    ui = {
-      border = 'none',
-      width = 1.0,
-      height = 1.0
-    }
-  } },
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ui = {
+				border = "none",
+				width = 1.0,
+				height = 1.0,
+			},
+		},
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "tsserver" },
+			ensure_installed = { "lua_ls", "tsserver", "bashls" },
 		},
 	},
 	{
@@ -62,12 +65,12 @@ return {
 				on_attach = handlers.on_attach,
 				capabilities = capabilities,
 			})
+
+			-- bash-language-server -----------------------
+			lspconfig["bashls"].setup({
+				on_attach = handlers.on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("plugins.lsp.null_ls")
-		end,
-	}, -- formatter
 }

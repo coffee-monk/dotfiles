@@ -26,7 +26,7 @@ return {
 				view = "cmdline_popup",
 			},
 			messages = {
-				enabled = false,
+				enabled = true,
 			},
 		},
 	},

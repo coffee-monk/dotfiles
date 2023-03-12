@@ -31,6 +31,7 @@ return {
 				extensions = { "nvim-tree" },
 				options = {
 					component_separators = { left = "", right = " " },
+          global_status = true,
 				},
 				sections = {
 					lualine_a = { "mode" },

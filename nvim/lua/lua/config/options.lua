@@ -8,7 +8,7 @@ local options = {
 	fileencoding = "utf-8",
 	clipboard = "unnamedplus",
 	undofile = true,
-	laststatus = 2,
+	laststatus = 3,
 	--
 	title = true,
 	expandtab = true,
