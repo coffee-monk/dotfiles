@@ -37,7 +37,7 @@ hide_root_node = true,
 						["/"] = "filter_on_submit",
 						["<ESC>"] = "clear_filter",
 						["'"] = { "toggle_preview", config = { use_float = true } },
-						["<ESC>"] = "revert_preview",
+						-- ["<ESC>"] = "revert_preview",
 						--
 						["a"] = { "add", config = { show_path = "relative" } },
 						["c"] = { "add", config = { show_path = "relative" } },
