@@ -39,7 +39,7 @@ format = "[$duration](bold #dfff00) "  #🕑
 format = "[⬢ $version ](bold #8ae234)"
 
 [python]
-format = '[$symbol$pyenv_prefix$version $virtualenv](bold #acd04a) '
+format = '[Python $pyenv_prefix$version $virtualenv](bold #acd04a) '
 
 [lua]
 format = '[Lua_$version](bold blue) '
