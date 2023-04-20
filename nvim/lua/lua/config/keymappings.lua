@@ -155,8 +155,8 @@ map("n", ")", "gt")
 map("n", "(", "gT")
 
 -- tab-indentation
-map("n", ">", "V>gv<ESC>")
-map("n", "<", "V<gv<ESC>")
+map("n", ">", ">>")
+map("n", "<", "<<")
 map("x", ">", ">gv")
 map("x", "<", "<gv")
 
@@ -266,9 +266,6 @@ if status then
 	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>gv]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
 	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>gv]])
-	map("v", "<", function()
-		nvim_comment.select_comment_chunk()
-	end)
 	--
 end
 
