@@ -12,7 +12,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "tsserver", "bashls" },
+			ensure_installed = { "lua_ls", "tsserver", "bashls", "pylsp", "cssls" },
 		},
 	},
 	{
@@ -66,10 +66,32 @@ return {
 				capabilities = capabilities,
 			})
 
-			-- bash-language-server -----------------------
+			-- css-language-server ------------------------------
+			lspconfig["cssls"].setup({
+				on_attach = handlers.on_attach,
+				capabilities = capabilities,
+			})
+
+			-- bash-language-server -----------------------------
 			lspconfig["bashls"].setup({
 				on_attach = handlers.on_attach,
 				capabilities = capabilities,
+			})
+
+			-- python-language-server ---------------------------
+			lspconfig["pylsp"].setup({
+				on_attach = handlers.on_attach,
+				capabilities = capabilities,
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = { "W391" },
+								maxLineLength = 100,
+							},
+						},
+					},
+				},
 			})
 		end,
 	},
