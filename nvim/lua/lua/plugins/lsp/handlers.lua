@@ -90,6 +90,7 @@ M.on_attach = function(client, bufnr)
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+  client.server_capabilities.semanticTokensProvider = nil
 end
 
 -- Completions & unique server capabilities >>>>>>>>>>>>>>>
