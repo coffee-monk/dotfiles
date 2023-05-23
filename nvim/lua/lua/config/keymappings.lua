@@ -49,6 +49,7 @@ map("n", "d", '"_d')
 map("v", "d", '"_d')
 map("x", "p", '"_dP') -- paste over highlighted
 map("n", "D", '"_d$') -- delete to end of line
+map("n", "dC", '"_d$a') -- delete to end of line & insert
 map("n", "cd", 'cc<ESC>"_dd') -- copy text & delete line
 map("n", "dc", '^"_d$i') -- delete line & insert
 
@@ -105,12 +106,8 @@ map("n", "@", ":set relativenumber!<CR>")
 map("x", "@", ":set relativenumber!<CR>")
 
 -- highlight all words under cursor
-map("n", "gn", "*")
-map("x", "gn", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
-
--- highlight until last highlighted word
-map("n", "$", "gn")
-map("x", "$", "gn")
+map("n", "$", "*")
+map("x", "$", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]])
 
 -- search & replace: all/word under cursor/selected
 map("n", "S", ":%s///g<Left><Left><Left>", { noremap = true, silent = false })
