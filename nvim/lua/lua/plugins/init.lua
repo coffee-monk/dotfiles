@@ -105,12 +105,9 @@ return {
 			},
 			view = {
 				side = "right",
-				-- hide_root_folder = true,
+				hide_root_folder = true,
 				preserve_window_proportions = true,
 			},
-      renderer = {
-        root_folder_label = false,
-      },
 			filters = {
 				dotfiles = true,
 			},

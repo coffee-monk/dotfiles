@@ -16,6 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- configuration options
 local opts = {
+	defaults = {
+		version = nil,
+	},
 	ui = {
 		size = { width = 1, height = 1 },
 	},
