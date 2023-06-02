@@ -92,7 +92,7 @@ if status then
   vim.cmd([[
    try
         colorscheme NeoSolarized
-    catch /^Vim\%((\a\+)\)\=:E18o
+    catch
         colorscheme default
         set background=dark
     endtry
