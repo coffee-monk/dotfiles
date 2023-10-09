@@ -17,16 +17,13 @@ return {
 		},
 		opts = {
 			presets = {
-				bottom_search = true,
+				bottom_search = false,
 				long_message_to_split = true,
 				command_palette = false,
 			},
 			cmdline = {
 				enabled = true,
 				view = "cmdline_popup",
-			},
-			messages = {
-				enabled = true,
 			},
 		},
 	},

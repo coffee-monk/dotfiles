@@ -8,9 +8,14 @@ end
 
 -- STANDARD KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+-- leader key set in lua/config/options
+
 -- semicolon as colon
 map("n", ";", ":", { noremap = true, silent = false })
 map("x", ";", ":<BS><BS><BS><BS><BS>", { noremap = true, silent = false })
+
+-- visual block mode
+map("n", "<Leader>v", "<C-v>")
 
 -- word/char/line count
 map("n", "<Leader><Leader>f", "g<C-g>")
@@ -20,7 +25,7 @@ map("n", "`", "~h")
 map("x", "`", "~")
 
 -- exit search highlight + exit lsp window
-map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>kj")
+map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>jk")
 
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
@@ -77,6 +82,9 @@ map("n", "H", "^")
 map("n", "L", "$")
 map("x", "H", "^")
 map("x", "L", "$")
+
+-- start of sentence
+map("n", "<Leader><BS>", "F.w")
 
 -- save & quit
 map("n", "<C-s>", ":w!<CR>")
@@ -163,14 +171,6 @@ map("n", "<Leader>\\", ":source<CR>")
 -- spell checker toggle
 map("n", "<Leader>s", ":set spell!<CR>")
 
--- cmd terminal mode
-pcall(
-	vim.cmd,
-	[[
-    nnoremap <Leader>; :!
-  ]]
-)
-
 -- COMMAND MODE WILDMENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 vim.cmd([[
@@ -215,80 +215,89 @@ vim.cmd([[
 
 -- PLUGIN KEYMAPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+-- chatGPT.nvi --------------------------------------------
+
+local status = pcall(require, "chatgpt")
+if status then
+	---
+	map("n", "<Leader>;", "<cmd>ChatGPT<CR>i<BS>")
+	map("v", "<Leader>;", "<cmd>ChatGPTEditWithInstructions<CR>i<BS>")
+	---
+end
+
 -- (maximizer) --------------------------------------------
 
 local status = pcall(require, "maximizer")
 if status then
-	--
+	---
 	map("n", "!", '<cmd>lua require("maximizer").toggle()<CR>')
-	--
+	---
 end
 
 -- neo-tree -----------------------------------------------
 
 local status = pcall(require, "neo-tree")
 if status then
-	--
+	---
 	map("n", "|", ":NeoTreeRevealToggle<CR>")
-	--
+	---
 end
 
 -- nvim-tree ----------------------------------------------
 
 local status = pcall(require, "nvim-tree")
 if status then
-	--
+	---
 	map("n", "\\", ":NeoTreeClose<CR>:NvimTreeToggle<CR>")
-	--
+	---
 end
 
 -- oil ----------------------------------------------------
 
 local status, oil = pcall(require, "oil")
 if status then
-	--
+	---
 	map("n", "<Leader>\\", function()
 		oil.close()
 		oil.open_float()
 	end)
-	--
+	---
 end
 
 -- nvim-comment ('<C-/>' & '<C-_>' are same) --------------
 
-local status, nvim_comment = pcall(require, "nvim_comment")
+local status = pcall(require, "nvim_comment")
 if status then
-	--
+	---
 	map("n", "<C-/>", ":CommentToggle<CR>")
 	map("x", "<C-/>", [[:'<, '>CommentToggle<CR>gv]])
 	map("n", "<C-_>", ":CommentToggle<CR>")
 	map("x", "<C-_>", [[:'<, '>CommentToggle<CR>gv]])
-	--
+	---
 end
 
 -- move.nvim ----------------------------------------------
 
 local status = pcall(require, "move")
 if status then
-	--
+	---
 	map("n", "<A-j>", ":MoveLine(1)<CR>") -- move line up/down
 	map("n", "<A-k>", ":MoveLine(-1)<CR>")
 	map("n", "<A-h>", ":MoveHChar(-1)<CR>") -- move char left/right
 	map("n", "<A-l>", ":MoveHChar(1)<CR>")
-	--
+	---
 	map("v", "<A-j>", ":MoveBlock(1)<CR>") -- move block up/down
 	map("v", "<A-k>", ":MoveBlock(-1)<CR>")
 	map("v", "<A-h>", ":MoveHBlock(-1)<CR>") -- move block left/right
 	map("v", "<A-l>", ":MoveHBlock(1)<CR>")
-
-	--
+	---
 end
 
 -- hop (normal + visual mode) -----------------------------
 
 local status = pcall(require, "hop")
 if status then
-	--
+	---
 	local function HopWordAC()
 		vim.cmd([[
      :lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })
@@ -304,7 +313,7 @@ if status then
      :lua require'hop'.hint_words({ multi_windows = true })
      ]])
 	end
-	--
+	---
 	map("n", "fj", function()
 		local status = pcall(HopWordAC)
 		if not status then
@@ -335,25 +344,25 @@ if status then
 	map("v", "fh", function()
 		HopWordMW()
 	end)
-	--
+	---
 end
 
 -- codewindow ----------------------------------------------
 
 local status, codewindow = pcall(require, "codewindow")
 if status then
-	--
+	---
 	map("n", "<C-\\>", function()
 		codewindow.toggle_minimap()
 	end)
-	--
+	---
 end
 
 -- marks --------------------------------------------------
 
 local status, marks = pcall(require, "marks")
 if status then
-	--
+	---
 	marks.setup({
 		mappings = {
 			next = "gm",
@@ -362,7 +371,7 @@ if status then
 			next_bookmark = "0",
 		},
 	})
-	--
+	---
 	map("n", "M<CR>", "<ESC>")
 end
 

@@ -12,7 +12,7 @@ return {
 		follow_current_file = true,
 		use_popups_for_input = true,
 		popup_border_style = "rounded",
-hide_root_node = true,
+		hide_root_node = true,
 		--
 		window = {
 			position = "right",
@@ -26,28 +26,28 @@ hide_root_node = true,
 			},
 		},
 		--
-			source_selector = {
-				winbar = false,
-		      statusline = true,
-			},
-			--
-			filesystem = {
-				window = {
-					mappings = {
-						["/"] = "filter_on_submit",
-						["<ESC>"] = "clear_filter",
-						["'"] = { "toggle_preview", config = { use_float = true } },
-						-- ["<ESC>"] = "revert_preview",
-						--
-						["a"] = { "add", config = { show_path = "relative" } },
-						["c"] = { "add", config = { show_path = "relative" } },
-						["m"] = { "add", config = { show_path = "relative" } },
-					},
+		source_selector = {
+			winbar = false,
+			statusline = true,
+		},
+		--
+		filesystem = {
+			window = {
+				mappings = {
+					["/"] = "filter_on_submit",
+					["<ESC>"] = "clear_filter",
+					["'"] = { "toggle_preview", config = { use_float = true } },
+					-- ["<ESC>"] = "revert_preview",
+					--
+					["a"] = { "add", config = { show_path = "relative" } },
+					["c"] = { "add", config = { show_path = "relative" } },
+					["m"] = { "add", config = { show_path = "relative" } },
 				},
-      		      filtered_items = {
-      		        visible = false,
-      hide_dotfiles = true,
-      		      }
 			},
+			filtered_items = {
+				visible = false,
+				hide_dotfiles = true,
+			},
+		},
 	},
 }

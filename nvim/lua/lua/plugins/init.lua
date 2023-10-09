@@ -11,9 +11,14 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		opts = {
-			show_current_context = true,
-		},
+		cond = true,
+		main = "ibl",
+		config = function()
+			require("ibl").setup({
+				indent = { char = "|" },
+				scope = { enabled = true, show_start = false },
+			})
+		end,
 	}, -- visual indent lines
 	{
 		"kana/vim-arpeggio",
@@ -26,10 +31,11 @@ return {
 		config = function()
 			require("mini.ai").setup({
 				custom_textobjects = {
-					b = { { [[%b'']], [[%b""]], "%b()", "%b[]", "%b{}" }, "^.().*().$" },
-					B = { { "%b{}", "%b()", "%b[]" }, "^.().*().$" },
-					c = { { "%b()" }, "^.().*().$" },
-					C = { { "%b{}" }, "^.().*().$" },
+					m = { { [[%b'']], [[%b""]], "%b()", "%b[]", "%b{}" }, "^.().*().$" },
+					M = { { "%b{}", "%b()", "%b[]" }, "^.().*().$" },
+					b = { { "%b()" }, "^.().*().$" },
+					B = { { "%b{}" }, "^.().*().$" },
+					c = { { "%b{}" }, "^.().*().$" },
 				},
 			})
 		end,
@@ -86,6 +92,7 @@ return {
 	},
 	{
 		"gorbit99/codewindow.nvim",
+		cond = true,
 		opts = {
 			width_multiplier = 5,
 			minimap_width = 12,
@@ -105,8 +112,10 @@ return {
 			},
 			view = {
 				side = "right",
-				hide_root_folder = true,
 				preserve_window_proportions = true,
+			},
+			renderer = {
+				root_folder_label = false,
 			},
 			filters = {
 				dotfiles = true,
@@ -179,6 +188,16 @@ return {
 		opts = {
 			mappings_style = "sandwich",
 			prefix = "sd",
+			pairs = {
+				nestable = {
+					b = { "(", ")" },
+					s = { "[", "]" },
+					B = { "{", "}" },
+					c = { "{", "}" },
+					a = { "<", ">" },
+				},
+				linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } },
+			},
 		},
 	},
 	{
@@ -186,6 +205,7 @@ return {
 		cond = true,
 		config = function()
 			require("nvim_comment").setup({
+				create_mappings = false,
 				comment_chunk_text_object = "<Nop>", -- remove text-object "ic"
 			})
 		end,
@@ -200,6 +220,8 @@ return {
         let g:VM_maps['Add Cursor At Pos'] = '' "remove conflicting map
         let g:VM_custom_noremaps = {'`':'~'}
         let g:VM_mouse_mappings = 1
+        let g:VM_show_warnings = 0
+
       ]])
 		end,
 	},
@@ -227,4 +249,5 @@ return {
 	{ "bluz71/vim-nightfly-guicolors", lazy = true },
 	{ "JaySandhu/xcode-vim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
+	{ "marko-cerovac/material.nvim", lazy = true },
 }

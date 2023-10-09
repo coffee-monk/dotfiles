@@ -62,7 +62,7 @@ return {
 			cmp.setup({
 				mapping = cmp.mapping.preset.insert({
 					["<A-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
+					["<C-c>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.confirm({ select = false }) -- bool -> select 1st option

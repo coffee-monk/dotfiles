@@ -1,7 +1,33 @@
 return {
 	"nvim-treesitter/playground",
-	"p00f/nvim-ts-rainbow",
 	{ "windwp/nvim-ts-autotag", config = true },
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		cond = true,
+		config = function()
+			local rainbow_delimiters = require("rainbow-delimiters")
+
+			vim.g.rainbow_delimiters = {
+				strategy = {
+					[""] = rainbow_delimiters.strategy["global"],
+					vim = rainbow_delimiters.strategy["local"],
+				},
+				query = {
+					[""] = "rainbow-delimiters",
+					-- lua = "rainbow-blocks",
+				},
+				highlight = {
+					"RainbowDelimiterYellow",
+					"RainbowDelimiterBlue",
+					"RainbowDelimiterOrange",
+					"RainbowDelimiterGreen",
+					"RainbowDelimiterCyan",
+					"RainbowDelimiterViolet",
+					"RainbowDelimiterRed",
+				},
+			}
+		end,
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
@@ -14,21 +40,6 @@ return {
 				highlight = {
 					enable = true,
 					disable = { "" }, -- list of languages to disable
-				},
-				rainbow = { -- rainbow parentheses
-					enable = true,
-					disable = { "html" },
-					extended_mode = false, -- highlight non-bracket delimiters like html tags etc
-					colors = {
-						"#FFFF00",
-						"#3BAFF5",
-						"#ffd4fe",
-						"#bdfcd0",
-						"#a8f9ff",
-						"#c5c6fc",
-					},
-					indent = { enable = true, disable = { "python", "css" } },
-					max_file_lines = nil, -- Do not enable for files with more than n lines
 				},
 			})
 		end,

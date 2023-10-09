@@ -2,7 +2,7 @@ return {
 	"ibhagwan/fzf-lua", -- requires fzf
 	config = function()
 		local opts = { noremap = true, silent = true }
-		require('fzf-lua').setup({
+		require("fzf-lua").setup({
 			winopts = {
 				height = 0.99,
 				width = 0.99,
@@ -16,6 +16,11 @@ return {
 			},
 			grep = {
 				input_prompt = "GREP => ",
+			},
+			previewers = {
+				builtin = {
+					treesitter = { enable = false },
+				},
 			},
 		})
 	end,
