@@ -66,6 +66,7 @@ alias vf="cd ~/.config/nvim"
 # Applications
 alias v="nvim"
 alias r="ranger"
+alias hl="helix"
 alias rs="redshift -O "
 alias rsd="redshift -x"
 alias rs2="redshift -x; redshift -O 2222 -b 0.75"
