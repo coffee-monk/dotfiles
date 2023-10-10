@@ -11,6 +11,7 @@ return {
 				strategy = {
 					[""] = rainbow_delimiters.strategy["global"],
 					vim = rainbow_delimiters.strategy["local"],
+					html = rainbow_delimiters.strategy["local"],
 				},
 				query = {
 					[""] = "rainbow-delimiters",
