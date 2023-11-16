@@ -23,13 +23,19 @@ return {
         keymaps = {
           close = { "<ESC>" },
         },
-        popup_layout = {
-          center = {
-            width = "80%",
-            height = "80%",
-          },
-        },
       },
+			---
+			popup_layout = {
+				default = "center",
+				center = {
+					width = "100%",
+					height = "100%",
+				},
+			},
+			right = {
+				width = "30%",
+				width_settings_open = "50%",
+			},
       ---
       edit_with_instructions = {
         diff = false,

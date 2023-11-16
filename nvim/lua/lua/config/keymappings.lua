@@ -221,7 +221,7 @@ local status = pcall(require, "chatgpt")
 if status then
 	---
 	map("n", "<Leader>;", "<cmd>ChatGPT<CR>i<BS>")
-	map("v", "<Leader>;", "<cmd>ChatGPTEditWithInstructions<CR>i<BS>")
+	map("v", "<Leader>;", "<cmd>ChatGPTEditWithInstructions<CR>")
 	---
 end
 

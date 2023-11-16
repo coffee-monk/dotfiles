@@ -13,7 +13,7 @@ return {
 		use_popups_for_input = true,
 		popup_border_style = "rounded",
 		hide_root_node = true,
-		--
+		---
 		window = {
 			position = "right",
 			width = 40,
@@ -25,12 +25,12 @@ return {
 				},
 			},
 		},
-		--
+		---
 		source_selector = {
 			winbar = false,
 			statusline = true,
 		},
-		--
+		---
 		filesystem = {
 			window = {
 				mappings = {
@@ -49,5 +49,6 @@ return {
 				hide_dotfiles = true,
 			},
 		},
+		---
 	},
 }
