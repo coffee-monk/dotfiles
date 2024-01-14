@@ -6,6 +6,7 @@ set fish_greeting               # Suppress fish intro message
 
 export EDITOR=nvim
 export TERM=xterm-kitty
+export PRETTIERD_DEFAULT_CONFIG="/home/mjc/.config/nvim/lua/plugins/null_format/formatter_configs/prettier.config.js"
 
 # Vi Mode -------------------------------------------------
 
