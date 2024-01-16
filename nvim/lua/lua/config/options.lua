@@ -1,7 +1,7 @@
 -- OPTIONS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 -- Neovim Leader Key <Leader>
-vim.g.mapleader = [[ ]] -- added her 
+vim.g.mapleader = [[ ]] -- added her
 
 -- vim.opt
 local options = {
@@ -37,7 +37,7 @@ local options = {
 	numberwidth = 4,
 	conceallevel = 0,
 	showmode = false,
-  fillchars = {eob = " "},
+	fillchars = { eob = " " },
 	---
 	hidden = true,
 	---
@@ -57,6 +57,9 @@ local options = {
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
+
+-- prevent startup screen
+vim.opt.shortmess:append({ I = true })
 
 -- VimScript Settings >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

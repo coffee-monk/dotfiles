@@ -165,7 +165,7 @@ return {
 			require("colorizer").setup()
 		end,
 	},
-	"ur4ltz/move.nvim",
+	"fedepujol/move.nvim",
 	"AndrewRadev/tagalong.vim",
 	{ "phaazon/hop.nvim", branch = "v2", config = true },
 	{
