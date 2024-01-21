@@ -27,6 +27,7 @@ local themes = {
 	{ "Nightowl", { theme = "nightfly", lua_loc = "config.colorschemes.lualine_themes.nightowl" } },
 	{ "Owl", { theme = "nightfly", lua_loc = "config.colorschemes.lualine_themes.nightowl" } },
 	{ "Dark", { theme = "vscode", lua_loc = "config.colorschemes.lualine_themes.dark" } },
+	{ "Vscode", { theme = "vscode", lua_loc = "config.colorschemes.lualine_themes.dark" } },
 	{ "Onedark", { theme = "onedark", lua_loc = "config.colorschemes.lualine_themes.onedark" } },
 	{ "Boo", { theme = "boo", lua_loc = "config.colorschemes.lualine_themes.boo" } },
 	{ "Moonlight", { theme = "moonlight", lua_loc = "config.colorschemes.lualine_themes.moonlight" } },
