@@ -9,7 +9,7 @@ return {
 	config = function()
 		-- mason-null-ls config
 		require("mason-null-ls").setup({
-			ensure_installed = { "stylua", "prettierd", "black", "shfmt" },
+			ensure_installed = { "stylua", "prettierd", "black", "shfmt", "djlint" },
 		})
 
 		-- null-ls config
@@ -34,6 +34,7 @@ return {
 				formatting.prettierd,
 				formatting.shfmt,
 				formatting.black,
+				formatting.djlint,
 			},
 			on_attach = on_attach, -- Format on SAVE
 		})

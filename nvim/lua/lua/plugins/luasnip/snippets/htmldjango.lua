@@ -2,7 +2,7 @@
 
 local ls = require("luasnip")
 
-local filetype = "html"
+local filetype = "htmldjango"
 
 -- Snippet Nodes
 local s = ls.snippet
@@ -18,7 +18,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
 
-	-- console.log(})
+	-- console.log({})
 	s("cl", fmt([[ console.log({})  ]], { i(0, "") })),
 
 	-- Template Brackets for htmldjango
