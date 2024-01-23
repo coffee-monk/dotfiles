@@ -57,6 +57,8 @@ map("n", "D", '"_d$') -- delete to end of line
 map("n", "dC", '"_d$a') -- delete to end of line & insert
 map("n", "cd", 'cc<ESC>"_dd') -- copy text & delete line
 map("n", "dc", '^"_d$i') -- delete line & insert
+map("n", "dc", '^"_d$i') -- delete line & insert
+map("n", "<Leader>p", "i <ESC>P") -- paste before word
 
 -- remap go to column #
 map("n", "<Leader><BAR>", "<BAR>")
