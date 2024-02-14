@@ -43,6 +43,9 @@ map("n", "K", "i<CR><ESC>")
 -- new line at cursor
 map("n", "<Leader>o", "O")
 
+-- insert mode enter with a space
+map("n", "<Leader>i", "i <ESC>i")
+
 -- delete & move back
 map("n", "X", "xh")
 
