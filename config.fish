@@ -30,9 +30,9 @@ set fish_cursor_replace_one underscore
 alias c="clear"
 alias e="exit"
 alias ...="cd ../.."
-alias ls="lsd"
-alias ll="lsd -l"
-alias l="lsd -la"
+alias ls="lsd --group-dirs first"
+alias l="lsd -1 --group-dirs first"
+alias ll="lsd -la"
 alias t="touch "
 
 # Directories
