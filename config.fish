@@ -7,6 +7,7 @@ set fish_greeting               # Suppress fish intro message
 export EDITOR=nvim
 export TERM=xterm-kitty
 export PRETTIERD_DEFAULT_CONFIG="/home/mjc/.config/nvim/lua/plugins/null_format/formatter_configs/prettier.config.js"
+export PYENV_ROOT="/home/mjc/.pyenv/"
 
 # Vi Mode -------------------------------------------------
 
@@ -90,6 +91,10 @@ function mkcd
     mkdir -p $dir
     cd $dir
 end
+
+# Pyenv (python version control) ---------------------------
+
+eval "$(pyenv init -)" # init in terminal
 
 # Starship Prompt ------------------------------------------
 
