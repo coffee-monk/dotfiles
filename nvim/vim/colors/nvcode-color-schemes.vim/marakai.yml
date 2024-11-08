@@ -103,7 +103,7 @@ highlights:
   QuickFixLine: "cyan"
   Search: "black yellow b"
   SpecialKey: "special_grey"
-  SpellBad: "error_red - u"
+  SpellBad: "error_red"
   SpellCap: "dark_yellow"
   SpellLocal: "dark_yellow"
   SpellRare: "dark_yellow"
