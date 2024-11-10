@@ -7,7 +7,7 @@ set fish_greeting               # Suppress fish intro message
 export EDITOR=nvim
 export TERM=xterm-kitty
 export PRETTIERD_DEFAULT_CONFIG="/home/mjc/.config/nvim/lua/plugins/null_format/formatter_configs/prettier.config.js"
-export PYENV_ROOT="/home/mjc/.pyenv/"
+# export PYENV_ROOT="/home/mjc/.pyenv/"
 
 # Vi Mode -------------------------------------------------
 
@@ -24,6 +24,12 @@ end
 set fish_cursor_default block blink
 set fish_cursor_insert line
 set fish_cursor_replace_one underscore
+
+# Pyenv ----------------------------------------------------
+
+# set -Ux PYENV_ROOT $HOME/.pyenv
+# fish_add_path $PYENV_ROOT/bin
+# pyenv init - | source
 
 # Alias ----------------------------------------------------
 
