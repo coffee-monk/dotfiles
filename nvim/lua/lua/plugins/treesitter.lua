@@ -41,7 +41,7 @@ return {
 				ensure_installed = "all",
 				ignore_install = { "" }, -- List of parsers to ignore installing
 				highlight = {
-					enable = false,
+					enable = true,
 					disable = { "" }, -- list of languages to disable
 				},
 			})
