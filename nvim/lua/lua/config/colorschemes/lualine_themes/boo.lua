@@ -44,4 +44,3 @@ return {
 		c = { bg = colors.black, fg = colors.gray },
 	},
 }
-

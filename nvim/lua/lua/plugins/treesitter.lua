@@ -1,9 +1,10 @@
 return {
 	"nvim-treesitter/playground",
-	{ "windwp/nvim-ts-autotag", config = true },
+  cond = false,
+	{ "windwp/nvim-ts-autotag", config = false },
 	{
 		"HiPhish/rainbow-delimiters.nvim",
-		cond = true,
+		cond = false,
 		config = function()
 			local rainbow_delimiters = require("rainbow-delimiters")
 
@@ -31,6 +32,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+    cond = true,
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
@@ -39,7 +41,7 @@ return {
 				ensure_installed = "all",
 				ignore_install = { "" }, -- List of parsers to ignore installing
 				highlight = {
-					enable = true,
+					enable = false,
 					disable = { "" }, -- list of languages to disable
 				},
 			})

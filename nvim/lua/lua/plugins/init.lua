@@ -73,7 +73,9 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
-		version = "v2.*",
+		version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    cond= true,
 		opts = {
 			options = {
 				separator_style = { "" },
@@ -137,25 +139,26 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
-			require("neoscroll").setup({
+      local neoscroll = require('neoscroll')
+			neoscroll.setup({
 				hide_cursor = true,
 				stop_eof = true, -- Stop at <EOF>
 				respect_scrolloff = false, -- Stop when cursor reaches scrolloff margin
 				cursor_scrolls_alone = true, -- Scroll even if window cannot scroll further
 			})
-			local t = {}
-			-- Syntax: t[keys] = {function, {function arguments}}
-			t["<A-=>"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
-			t["<A-->"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
-			t["+"] = { "scroll", { "-vim.wo.scroll", "true", "350" } }
-			t["_"] = { "scroll", { "vim.wo.scroll", "true", "350" } }
-			t["zt"] = { "zt", { "150" } }
-			t["zz"] = { "zz", { "150" } }
-			t["zb"] = { "zb", { "150" } }
-			t["<Leader>k"] = { "zt", { "150" } }
-			t["<Leader>j"] = { "zz", { "150" } }
-			t["<Leader>h"] = { "zb", { "150" } }
-			require("neoscroll.config").set_mappings(t)
+      local keymap = {
+        ["<A-=>"] = function() neoscroll.ctrl_u({ duration = 350; easing = 'sine' }) end;
+        ["<A-->"] = function() neoscroll.ctrl_d({ duration = 350; easing = 'sine' }) end;
+        ["+"] = function() neoscroll.ctrl_u({ duration = 350; easing = 'sine' }) end;
+        ["_"] = function() neoscroll.ctrl_d({ duration = 350; easing = 'sine' }) end;
+        ["<Leader>k"] = function() neoscroll.zt({ half_win_duration = 150; easing = 'sine' }) end;
+        ["<Leader>j"] = function() neoscroll.zz({ half_win_duration = 150; easing = 'sine' }) end;
+        ["<Leader>h"] = function() neoscroll.zb({ half_win_duration = 150; easing = 'sine' }) end;
+      }
+      local modes = { 'n', 'v', 'x' }
+      for key, func in pairs(keymap) do
+        vim.keymap.set(modes, key, func)
+      end
 		end,
 	},
 

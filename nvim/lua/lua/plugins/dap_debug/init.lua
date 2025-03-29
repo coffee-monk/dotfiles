@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
+  cond = false,
   dependencies = {
     { "theHamsta/nvim-dap-virtual-text", opts = { commented = false } },
     { "rcarriga/nvim-dap-ui",            config = true },

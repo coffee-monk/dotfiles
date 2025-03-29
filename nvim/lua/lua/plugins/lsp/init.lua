@@ -12,7 +12,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "tsserver", "bashls", "pylsp", "cssls" },
+			ensure_installed = { "lua_ls", "ts_ls", "bashls", "pylsp", "cssls" },
 		},
 	},
 	{
@@ -61,7 +61,7 @@ return {
 			})
 
 			-- typescript-language-server -----------------------
-			lspconfig["tsserver"].setup({
+			lspconfig["ts_ls"].setup({
 				on_attach = handlers.on_attach,
 				capabilities = capabilities,
 			})

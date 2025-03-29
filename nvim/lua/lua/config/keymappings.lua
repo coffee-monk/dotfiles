@@ -25,7 +25,8 @@ map("n", "`", "~h")
 map("x", "`", "~")
 
 -- exit search highlight + exit lsp window
-map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>jk")
+-- map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>jk")
+map("n", "<ESC>", ":noh<CR>")
 
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
@@ -415,8 +416,8 @@ pcall(
 pcall(
 	vim.cmd,
 	[[
-    call arpeggio#map('n','s','0','jk',":lua require('neoscroll').scroll(0.25, true, 250)<CR>")
-    call arpeggio#map('n','s','0','kl',":lua require('neoscroll').scroll(-0.25, true, 250)<CR>")
+    call arpeggio#map('n','s','0','jk',":lua require('neoscroll').scroll(0.25, { move_cursor=false; duration = 250 })<CR>")
+    call arpeggio#map('n','s','0','kl',":lua require('neoscroll').scroll(-0.25, { move_cursor=false; duration = 250})<CR>")
   ]]
 )
 
