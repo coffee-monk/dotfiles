@@ -25,8 +25,8 @@ map("n", "`", "~h")
 map("x", "`", "~")
 
 -- exit search highlight + exit lsp window
--- map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>jk")
-map("n", "<ESC>", ":noh<CR>")
+map("n", "<ESC>", ":noh<CR>:lua require('notify').dismiss()<CR>jk")
+-- map("n", "<ESC>", ":noh<CR>")
 
 -- enter key behavior
 map("n", "<CR>", "O<ESC>j")
