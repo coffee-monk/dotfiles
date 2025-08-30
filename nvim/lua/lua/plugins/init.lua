@@ -170,7 +170,9 @@ return {
 			require("colorizer").setup()
 		end,
 	},
-	"fedepujol/move.nvim",
+	{ "fedepujol/move.nvim",
+    opts = {}
+  },
 	"AndrewRadev/tagalong.vim",
 	{ "phaazon/hop.nvim", branch = "v2", config = true },
 	{
